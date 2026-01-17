@@ -1,0 +1,27 @@
+{
+  "title": "Coptic Psalm in Singari",
+  "id": "Coptic_Psalm_in_Singari",
+  "author": "Ibrahim Ayad",
+  "audioAsset": "assets/audio/Coptic_Psalm_in_Singari.mp3",
+  "pdfAsset": "assets/pdfs/Coptic_Psalm_in_Singari.pdf",
+
+    "lines": [
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_01.png", "startMs": 0, "endMs": 12800 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_02.png", "startMs": 12900, "endMs": 27600 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_03.png", "startMs": 27700, "endMs": 39200 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_04.png", "startMs": 39250, "endMs": 58700 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_05.png", "startMs": 58800, "endMs": 79400 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_06.png", "startMs": 79450, "endMs": 92500 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_07.png", "startMs": 92500, "endMs": 112500 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_08.png", "startMs": 112500, "endMs": 133000 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_09.png", "startMs": 133000, "endMs": 148000 },
+    
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_10.png", "startMs": 148000, "endMs": 160000 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_11.png", "startMs": 160000, "endMs": 179800 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_12.png", "startMs": 179800, "endMs": 193800 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_13.png", "startMs": 193800, "endMs": 206500 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_14.png", "startMs": 206500, "endMs": 225100 },
+    
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_15.png", "startMs": 225100, "endMs": 245000 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_16.png", "startMs": 245000, "endMs": 255000 },
+

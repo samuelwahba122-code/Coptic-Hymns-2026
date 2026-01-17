@@ -1,0 +1,16 @@
+{
+  "groups": [
+    {
+      "id": "",
+      "title": "Epiphany Hymns",
+      "hymns": [
+        {
+          "id": "",
+          "title": "Oran Enshosho",
+          "author": "Ashraf Tadros",
+          "jsonAsset": "assets/hymns/oran_enshosho.json"
+        }
+      ]
+    }
+  ]
+}

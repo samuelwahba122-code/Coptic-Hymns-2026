@@ -1,0 +1,96 @@
+############################
+# Flutter / Dart
+############################
+.dart_tool/
+.buildlog/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# Dart/Flutter misc
+*.log
+
+############################
+# IDEs / Editors
+############################
+# VS Code
+.vscode/
+# If you WANT to keep VS Code settings, comment the line above and keep:
+# !.vscode/launch.json
+# !.vscode/tasks.json
+# !.vscode/settings.json
+# !.vscode/extensions.json
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio (Windows)
+.vs/
+
+############################
+# OS files
+############################
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+############################
+# Android
+############################
+# Gradle / local machine files
+android/.gradle/
+android/local.properties
+
+# Build outputs
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+############################
+# iOS / macOS
+############################
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+
+############################
+# Windows / Linux / macOS builds (Flutter desktop)
+############################
+windows/flutter/ephemeral/
+linux/flutter/ephemeral/
+macos/Flutter/ephemeral/
+
+############################
+# Signing keys / certificates (NEVER COMMIT)
+############################
+# Common keystore formats
+*.jks
+*.keystore
+*.p12
+*.pfx
+
+# Android signing properties
+android/key.properties
+
+# Certificates / keys
+*.pem
+*.crt
+*.cer
+*.key
+
+############################
+# Project-specific / your repo extras
+############################
+android_backup/
+testers.csv
