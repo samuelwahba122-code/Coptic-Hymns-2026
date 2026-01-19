@@ -76,3 +76,6 @@ android/key.properties
 ############################
 android_backup/
 testers.csv
+
+# FVM Version Cache
+.fvm/
