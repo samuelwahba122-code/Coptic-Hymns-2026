@@ -23,5 +23,9 @@
         { "image": "assets/lines/Coptic_Psalm_in_Singari/line_14.png", "startMs": 206500, "endMs": 225100 },
     
         { "image": "assets/lines/Coptic_Psalm_in_Singari/line_15.png", "startMs": 225100, "endMs": 245000 },
-        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_16.png", "startMs": 245000, "endMs": 255000 },
+        { "image": "assets/lines/Coptic_Psalm_in_Singari/line_16.png", "startMs": 245000, "endMs": 255000 }
+
+    ]
+}
+
 

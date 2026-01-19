@@ -1,0 +1,20 @@
+{
+  "title": "Enthote Ti Shori",
+  "id": "enthote_ti",
+  "author": "Ibrahim Ayad",
+  "audioAsset": "assets/audio/enthote_ti.mp3",
+  "pdfAsset": "assets/pdfs/enthote_ti.pdf",
+  "lines": [
+    { "image": "assets/lines/enthote_ti/line (1).png", "startMs": 0, "endMs": 12800 },
+    { "image": "assets/lines/enthote_ti/line (2).png", "startMs": 12900, "endMs": 27600 },
+    { "image": "assets/lines/enthote_ti/line (3).png", "startMs": 27700, "endMs": 39200 },
+    { "image": "assets/lines/enthote_ti/line (4).png", "startMs": 39250, "endMs": 58700 },
+    { "image": "assets/lines/enthote_ti/line (5).png", "startMs": 58800, "endMs": 79400 },
+    { "image": "assets/lines/enthote_ti/line (6).png", "startMs": 79450, "endMs": 92500 },
+    { "image": "assets/lines/enthote_ti/line (7).png", "startMs": 92500, "endMs": 112500 },
+    { "image": "assets/lines/enthote_ti/line (8).png", "startMs": 112500, "endMs": 133000 },
+    { "image": "assets/lines/enthote_ti/line (9).png", "startMs": 133000, "endMs": 148000 },
+    { "image": "assets/lines/enthote_ti/line (10).png", "startMs": 148000, "endMs": 160000 }
+
+    ]
+}

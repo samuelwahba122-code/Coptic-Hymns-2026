@@ -1,14 +1,39 @@
 {
   "groups": [
     {
-      "id": "",
-      "title": "Epiphany Hymns",
+      "id": "epiphany",
+      "title": "Epiphany",
       "hymns": [
         {
-          "id": "",
+          "id": "epiphany",
           "title": "Oran Enshosho",
           "author": "Ashraf Tadros",
           "jsonAsset": "assets/hymns/oran_enshosho.json"
+        }
+      ]
+    }
+
+    , {
+      "id": "great_Lent",
+      "title": "Great Lent",
+      "hymns": [
+        {
+          "id": "",
+          "title": "Keryeleyson",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/keryeleyson.json"
+        },
+        {
+          "id": "",
+          "title": "Enthote Ti Shori",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/enthote_ti.json"
+        },
+        {
+          "id": "",
+          "title": "Shari Efnoti",
+          "author": "Ibrahim Ayad", 
+          "jsonAsset": "assets/hymns/shari_efnoti.json"
         }
       ]
     }

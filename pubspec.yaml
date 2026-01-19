@@ -24,6 +24,10 @@ flutter:
     - assets/hymns/
     - assets/pdfs/
     - assets/lines/
+    - assets/lines/keryeleyson/
+    - assets/lines/enthote_ti/
+    - assets/lines/shari_efnoti/
+
     - assets/images/
     - assets/icon/
 
