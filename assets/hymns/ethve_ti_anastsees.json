@@ -1,0 +1,30 @@
+{
+  "title": "Ethve Ti Anastsees",
+  "id": "Ethve Ti Anastsees",
+  "author": "Ibrahim Ayad",
+  "audioAsset": "assets/audio/ethve_ti_anastsees.wav",
+  "pdfAsset": "assets/pdfs/ethve_ti_anastsees.pdf",
+  "lines":[
+    { "image": "assets/lines/ethve_ti_anastsees/line (1).png", "startMs": 22000, "endMs": 43500 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (2).png", "startMs": 43500, "endMs": 61500 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (3).png", "startMs": 61500, "endMs": 78000 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (4).png", "startMs": 78000, "endMs": 87000 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (5).png", "startMs": 87000, "endMs": 116500 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (6).png", "startMs": 116500, "endMs": 138700 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (7).png", "startMs": 138700, "endMs": 159400 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (8).png", "startMs": 159400, "endMs": 180400 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (9).png", "startMs": 180400, "endMs": 198600 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (10).png", "startMs": 198600, "endMs": 205400 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (11).png", "startMs": 205400, "endMs": 213700 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (12).png", "startMs": 213700, "endMs": 237300 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (13).png", "startMs": 237300, "endMs": 264100 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (14).png", "startMs": 264100, "endMs": 285900 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (15).png", "startMs": 285900, "endMs": 312900 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (16).png", "startMs": 312900, "endMs": 336800 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (17).png", "startMs": 336800, "endMs": 379800 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (18).png", "startMs": 379800, "endMs": 403300 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (19).png", "startMs": 403300, "endMs": 431000 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (20).png", "startMs": 431000, "endMs": 448500 },
+    { "image": "assets/lines/ethve_ti_anastsees/line (21).png", "startMs": 448500, "endMs": 467200 }
+  ]
+}
