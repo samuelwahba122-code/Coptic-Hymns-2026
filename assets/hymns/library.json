@@ -37,5 +37,23 @@
         }
       ]
     }
+    ,
+
+    {
+      "id": "holy_week",
+      "title": "Holy Week",
+      "hymns": [
+        {
+          "id": "",
+          "title": "Ethve Ti Anastsees",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/ethve_ti_anastsees.json"
+        }
+
+      ]
+    }
+
+
+
   ]
 }
