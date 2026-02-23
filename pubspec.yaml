@@ -23,12 +23,7 @@ flutter:
     - assets/audio/
     - assets/hymns/
     - assets/pdfs/
-    - assets/lines/
-    - assets/lines/keryeleyson/
-    - assets/lines/enthote_ti/
-    - assets/lines/shari_efnoti/
-    - assets/lines/ethve_ti_anastsees/
-
+    - assets/fonts/
     - assets/images/
     - assets/icon/
 

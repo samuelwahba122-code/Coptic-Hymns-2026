@@ -1,10 +1,14 @@
+import 'dart:async';
 import 'dart:convert';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../audio/shared_audio_player.dart';
 import '../models/hymn_models.dart';
 import '../widgets/audio_controls.dart';
+import '../widgets/hazzat.dart';
+import '../widgets/text_layer.dart';
 import 'pdf_hymn_screen.dart';
 
 enum HymnPage { hymn, settings }
@@ -14,22 +18,24 @@ class HymnPlayerScreen extends StatefulWidget {
   const HymnPlayerScreen({
     super.key,
     required this.hymnJsonAsset,
-    required this.hymnTitle, required author,
+    required this.hymnTitle,
+    this.author,
   });
 
   final String hymnJsonAsset;
   final String hymnTitle;
+  final String? author;
 
   @override
   State<HymnPlayerScreen> createState() => _HymnPlayerScreenState();
 }
 
 class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
+  final ScrollController _scrollController = ScrollController();
   final _shared = SharedAudioPlayer.instance;
 
   bool _immersive = false;
   bool _audioPlaying = false;
-
 
   HymnData? _data;
   String? _error;
@@ -40,11 +46,14 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
   bool _followAudio = true;
   ViewMode _viewMode = ViewMode.single;
 
-  // NEW: which page is visible (Hymn / Settings)
+  // which page is visible (Hymn / Settings)
   HymnPage _page = HymnPage.hymn;
 
   // List mode: exact scroll-to-selected
   final Map<int, GlobalKey> _rowKeys = {};
+
+  StreamSubscription<bool>? _playingSub;
+  StreamSubscription<Duration>? _positionSub;
 
   @override
   void initState() {
@@ -53,11 +62,15 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
   }
 
   @override
-void dispose() {
-  // restore bars when leaving screen
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-  super.dispose();
-}
+  void dispose() {
+    _playingSub?.cancel();
+    _positionSub?.cancel();
+    _scrollController.dispose();
+
+    // restore bars when leaving screen
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    super.dispose();
+  }
 
   Future<void> _enterImmersive() async {
     if (_immersive) return;
@@ -81,18 +94,20 @@ void dispose() {
 
       await _shared.loadAssetIfNeeded(data.audioAsset);
 
-       _shared.player.playingStream.listen((playing) {
-          _audioPlaying = playing;
-          if (playing) {
-            _enterImmersive();
-          } else {
-            _exitImmersive();
-          }
-        });
+      _playingSub?.cancel();
+      _playingSub = _shared.player.playingStream.listen((playing) {
+        _audioPlaying = playing;
+        if (playing) {
+          _enterImmersive();
+        } else {
+          _exitImmersive();
+        }
+      });
 
-
-      _shared.player.positionStream.listen((pos) async {
+      _positionSub?.cancel();
+      _positionSub = _shared.player.positionStream.listen((pos) async {
         if (!_followAudio) return;
+
         final ms = pos.inMilliseconds;
         final idx = _findActiveLine(data.lines, ms);
 
@@ -110,9 +125,13 @@ void dispose() {
 
   int _findActiveLine(List<HymnLine> lines, int posMs) {
     if (lines.isEmpty) return 0;
+
     for (int i = 0; i < lines.length; i++) {
       final start = lines[i].startMs;
-      final end = (i + 1 < lines.length) ? lines[i + 1].startMs : 1 << 30;
+
+      final end = lines[i].endMs ??
+          ((i + 1 < lines.length) ? lines[i + 1].startMs : 1 << 30);
+
       if (posMs >= start && posMs < end) return i;
     }
     return 0;
@@ -120,6 +139,7 @@ void dispose() {
 
   Future<void> _ensureLineVisible(int idx) async {
     if (_viewMode != ViewMode.list) return;
+
     final key = _rowKeys[idx];
     final ctx = key?.currentContext;
     if (ctx == null) return;
@@ -150,8 +170,37 @@ void dispose() {
     await _goTo(_activeIndex, play: true);
   }
 
+  Widget _buildLineImage(String assetPath) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: InteractiveViewer(
+        minScale: 1,
+        maxScale: 3,
+        panEnabled: true,
+        child: FittedBox(
+          fit: BoxFit.contain,
+          child: Image.asset(assetPath),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
+    final t = (line.text ?? '').trim();
+    if (t.isEmpty) return const SizedBox.shrink();
+
+    return Hazzat(
+      child: TextLayer(
+        text: t,
+        fontFamily: data.fontFamily,
+        isActive: active,
+      ),
+    );
+  }
+
   Widget _buildSingleMode(HymnData data) {
     final line = data.lines[_activeIndex];
+    final hasImage = (line.image ?? '').trim().isNotEmpty;
 
     return Column(
       children: [
@@ -167,20 +216,21 @@ void dispose() {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(8, 10, 8, 10),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: InteractiveViewer(
-                minScale: 1,
-                maxScale: 3,
-                panEnabled: true,
-                child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: Image.asset(line.image),
-                ),
-              ),
-            ),
+            child: hasImage
+                ? _buildLineImage(line.image!)
+                : Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: _buildLineText(data, line, active: true),
+                    ),
+                  ),
           ),
         ),
+        if (hasImage)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
+            child: _buildLineText(data, line, active: true),
+          ),
         Padding(
           padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
           child: Row(
@@ -226,6 +276,7 @@ void dispose() {
         const Divider(height: 1),
         Expanded(
           child: ListView.builder(
+            controller: _scrollController,
             padding: const EdgeInsets.symmetric(vertical: 8),
             itemCount: data.lines.length,
             itemBuilder: (context, i) {
@@ -233,6 +284,9 @@ void dispose() {
               final active = (i == _activeIndex);
 
               final key = _rowKeys.putIfAbsent(i, () => GlobalKey());
+
+              final hasImage = (line.image ?? '').trim().isNotEmpty;
+              final hasText = (line.text ?? '').trim().isNotEmpty;
 
               return Container(
                 key: key,
@@ -243,16 +297,12 @@ void dispose() {
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: active
-                          // ignore: deprecated_member_use
                           ? const Color(0xFFC9A24A).withOpacity(0.14)
-                          // ignore: deprecated_member_use
                           : Theme.of(context).colorScheme.surface.withOpacity(0.10),
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(
                         color: active
-                            // ignore: deprecated_member_use
                             ? const Color(0xFFC9A24A).withOpacity(0.55)
-                            // ignore: deprecated_member_use
                             : Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
                       ),
                     ),
@@ -265,12 +315,10 @@ void dispose() {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: active
-                                // ignore: deprecated_member_use
                                 ? const Color(0xFFC9A24A).withOpacity(0.18)
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              // ignore: deprecated_member_use
                               color: Theme.of(context).colorScheme.onSurface.withOpacity(0.14),
                             ),
                           ),
@@ -278,16 +326,30 @@ void dispose() {
                             "${i + 1}",
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              // ignore: deprecated_member_use
                               color: Theme.of(context).colorScheme.onSurface.withOpacity(0.9),
                             ),
                           ),
                         ),
                         const SizedBox(width: 10),
                         Expanded(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(line.image, fit: BoxFit.contain),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              if (hasText) _buildLineText(data, line, active: active),
+                              if (hasText && hasImage) const SizedBox(height: 8),
+                              if (hasImage)
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(line.image!, fit: BoxFit.contain),
+                                ),
+                              if (!hasText && !hasImage)
+                                Text(
+                                  "Line ${i + 1}",
+                                  style: TextStyle(
+                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                                  ),
+                                ),
+                            ],
                           ),
                         ),
                       ],
@@ -347,15 +409,15 @@ void dispose() {
       return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
-    
-    // ignore: deprecated_member_use
+    final hasPdf = (data.pdfAsset ?? '').trim().isNotEmpty;
+
     return WillPopScope(
       onWillPop: () async {
         if (_page == HymnPage.settings) {
           setState(() => _page = HymnPage.hymn);
-          return false; // don't pop the whole screen
+          return false;
         }
-        return true; // normal back (exit hymn)
+        return true;
       },
       child: Scaffold(
         appBar: _immersive
@@ -364,18 +426,20 @@ void dispose() {
                 title: Text(_page == HymnPage.hymn ? data.title : "Settings"),
                 actions: [
                   IconButton(
-                    tooltip: "Open PDF",
+                    tooltip: hasPdf ? "Open PDF" : "No PDF available",
                     icon: const Icon(Icons.picture_as_pdf),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => PdfHymnScreen(
-                          title: data.title,
-                          pdfAssetPath: data.pdfAsset,
-                          sharedPlayer: _shared.player,
-                        ),
-                      ),
-                    ),
+                    onPressed: hasPdf
+                        ? () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => PdfHymnScreen(
+                                  title: data.title,
+                                  pdfAssetPath: data.pdfAsset!,
+                                  sharedPlayer: _shared.player,
+                                ),
+                              ),
+                            )
+                        : null,
                   ),
                   PopupMenuButton<HymnPage>(
                     tooltip: "Menu",
