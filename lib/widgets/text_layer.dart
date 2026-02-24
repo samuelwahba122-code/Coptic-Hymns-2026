@@ -27,6 +27,7 @@ class TextLayer extends StatelessWidget {
         fontSize: 22,
         height: 1.8,
         fontWeight: isActive ? FontWeight.w700 : FontWeight.w600,
+        // ignore: deprecated_member_use
         color: isActive ? cs.onSurface : cs.onSurface.withOpacity(0.92),
       ),
     );

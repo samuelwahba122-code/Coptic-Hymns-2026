@@ -5,78 +5,34 @@
     "author": "Ibrahim Ayad",
     "audio": "assets/audio/agios.mp3",
     "lines": [
-      {"i":1,"text":"A(z x x e.cdaw +edd.cd.","s":0,"e":59926},
-      {"i":2,"text":"z w zz zz ws.)2","s":59926,"e":80664},
-  
-      {"i":3,"text":"gicd x oz q w.c -zz","s":80664,"e":103444},
-      {"i":4,"text":"(q w zw)2.zw.x -zz (q w zw )2.","s":103444,"e":121938},
-  
-      {"i":5,"text":"zrf x.zrf.z +xe.z w x","s":121938,"e":142420},
-      {"i":6,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":142420,"e":167312},
-  
-      {"i":7,"text":"`ozzedd edd.xw xw","s":167312,"e":192730},
-      {"i":8,"text":"edd.cdaw +edd.cd.z w zz zz ws.","s":192730,"e":219090},
-  
-      {"i":9,"text":"x zzazzazz w","s":219090,"e":241110},
-      {"i":10,"text":"xs.zw +zz.cd.zrf zz ws.","s":241110,"e":259162},
-  
-      {"i":11,"text":":ecd x oz q w.c -zz","s":259162,"e":278490},
-      {"i":12,"text":"(q w zw)2.zw.x -zz (q w zw)2.","s":278490,"e":339094},
-  
-      {"i":13,"text":"zrf x.zrf.z +xe.z w x","s":339094,"e":360018},
-      {"i":14,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":360018,"e":382352},
-  
-      {"i":15,"text":"A(z x x e.cdaw +edd.cd.","s":382352,"e":400978},
-      {"i":16,"text":"z w zz zz ws.)2","s":400978,"e":421144},
-  
-      {"i":17,"text":"gicd x oz q w.c -zz","s":421144,"e":446170},
-      {"i":18,"text":"(q w zw)2.zw.x -zz (q w zw )2.","s":446170,"e":471642},
-  
-      {"i":19,"text":"zrf x.zrf.z +xe.z w x","s":471642,"e":503508},
-      {"i":20,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":503508,"e":518738},
-  
-      {"i":21,"text":"ic,uzzedd edd.xw xw","s":518738,"e":537232},
-      {"i":22,"text":"edd.cdaw +edd.cd.z w zz zz ws.","s":537232,"e":557712},
-  
-      {"i":23,"text":"x zzazzazz w","s":557712,"e":619858},
-      {"i":24,"text":"xs.zw +zz.cd.zrf zz ws.","s":619858,"e":640338},
-  
-      {"i":25,"text":"cd x roz q w.c -zz","s":640338,"e":662934},
-      {"i":26,"text":"(q w zw)2.zw.x -zz (q w zw)2.","s":662934,"e":681560},
-  
-      {"i":27,"text":"zrf x.zrf.z +xe.z w x","s":681560,"e":701572},
-      {"i":28,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":701572,"e":731926},
-  
-      {"i":29,"text":"`a;azzedd edd.xw xw","s":731926,"e":753814},
-      {"i":30,"text":"edd.cdaw +edd.cd.z w zz zz ws.","s":753814,"e":779860},
-  
-      {"i":31,"text":"x zzazzazz w","s":779860,"e":801304},
-      {"i":32,"text":"xs.zw +zz.cd.zrf zz ws.","s":801304,"e":839574},
-  
-      {"i":33,"text":"nacd x toz q w.c -zz","s":839574,"e":869014},
-      {"i":34,"text":"(q w zw)2.zw.x -zz (q w zw)2.","s":869014,"e":898458},
-  
-      {"i":35,"text":"zrf x.zrf.z +xe.z w x","s":898458,"e":918228},
-      {"i":36,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":918228,"e":940432},
-  
-      {"i":37,"text":"`o`cta(z x x e.cdaw +edd.cd.","s":940432,"e":966294},
-      {"i":38,"text":"z w zz zz ws.)2u","s":966294,"e":977686},
-  
-      {"i":39,"text":"rwcd x ;iz q w.c -zz","s":977686,"e":1014806},
-      {"i":40,"text":"(q w zw)2.zw.x -zz (q w zw )2.","s":1014806,"e":1030608},
-  
-      {"i":41,"text":"zrf x.zrf.z +xe.z w x","s":1030608,"e":1060442},
-      {"i":42,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS","s":1060442,"e":1078674},
-  
-      {"i":43,"text":"zc diyzzedd edd.xw xw","s":1078674,"e":1097170},
-      {"i":44,"text":"edd.cdaw +edd.cd.z w zz zz ws.","s":1097170,"e":1115348},
-  
-      {"i":45,"text":"cd x maz q w.c -zz","s":1115348,"e":1133010},
-      {"i":46,"text":"(q w zw)2.zw.x -zz (q w zw)2.","s":1133010,"e":1142098},
-  
-      {"i":47,"text":"zrf x.zrf.z +xe.z w x","s":1142098,"e":1176920},
-      {"i":48,"text":"wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS c.","s":1176920,"e":1198812},
-  
-      {"i":49,"text":"`ex lex `ycozz.v -cd n. `yzz wss wss q x mac.zz cd c.","s":1198812,"e":1250510}
-    ]
+  { "i": 1, "franco": "A / (z x x e.cdaw +edd.cd.z w zz zz ws.)2", "s": 0, "e": 60504 },
+  { "i": 2, "franco": "Ge / cd x Ge / z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2.", "s": 60504, "e": 93204 },
+  { "i": 3, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS io /.", "s": 93204, "e": 142298 },
+  { "i": 4, "franco": "S / zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.", "s": 142298, "e": 174818 },
+  { "i": 5, "franco": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.", "s": 174818, "e": 199136 },
+  { "i": 6, "franco": "O / cd x O / z q w.c -zz (q w zw)2.zw.x -zz (q w zw)2.", "s": 199136, "e": 231010 },
+  { "i": 7, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS The /.", "s": 231010, "e": 278676 },
+  { "i": 8, "franco": "Oo / (z x x e.cdaw +edd.cd.z w zz zz ws.)2", "s": 278676, "e": 339230 },
+  { "i": 9, "franco": "S / cd x S / z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2.", "s": 339230, "e": 372512 },
+  { "i": 10, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS A /.", "s": 372512, "e": 421256 },
+  { "i": 11, "franco": "Ge / zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.", "s": 421256, "e": 453146 },
+  { "i": 12, "franco": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.", "s": 453146, "e": 478356 },
+  { "i": 13, "franco": "cd x io / z q w.c -zz (q w zw)2.zw.x -zz (q w zw)2.", "s": 478356, "e": 509580 },
+  { "i": 14, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS S / .", "s": 509580, "e": 557982 },
+  { "i": 15, "franco": "S / (z x x e.cdaw +edd.cd.z w zz zz ws.)2", "s": 557982, "e": 619738 },
+  { "i": 16, "franco": "Es / cd x Es / z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2.", "s": 619738, "e": 653018 },
+  { "i": 17, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS Che /.", "s": 653018, "e": 701658 },
+  { "i": 18, "franco": "Ro / zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.", "s": 701658, "e": 734624 },
+  { "i": 19, "franco": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.", "s": 734624, "e": 760796 },
+  { "i": 20, "franco": "S / cd x S / z q w.c -zz (q w zw)2.zw.x -zz (q w zw)2.", "s": 760796, "e": 791694 },
+  { "i": 21, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS A /.", "s": 791694, "e": 839320 },
+  { "i": 22, "franco": "Ge / (z x x e.cdaw +edd.cd.z w zz zz ws.)2 Ge /", "s": 839320, "e": 899298 },
+  { "i": 23, "franco": "Na / cd x Na / z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2.", "s": 899298, "e": 930016 },
+  { "i": 24, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS", "s": 930016, "e": 967576 },
+  { "i": 25, "franco": "z S / zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.", "s": 967576, "e": 977478 },
+  { "i": 26, "franco": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.", "s": 977478, "e": 1011858 },
+  { "i": 27, "franco": "cd x Esta / z q w.c -zz (q w zw)2.zw.x -zz (q w zw)2.", "s": 1011858, "e": 1037146 },
+  { "i": 28, "franco": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS Vro /.", "s": 1037146, "e": 1068698 }
+]
+      
   }
