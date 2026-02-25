@@ -23,9 +23,17 @@ flutter:
     - assets/audio/
     - assets/hymns/
     - assets/pdfs/
-    - assets/fonts/
     - assets/images/
     - assets/icon/
+
+  fonts:
+    - family: HazzatFont
+      fonts:
+        - asset: assets/fonts/hazzat.ttf
+    
+    - family: RobotoFont
+      fonts:
+        - asset: assets/fonts/Roboto.ttf
 
 
 dev_dependencies:

@@ -1,70 +1,166 @@
-class HymnLine {
-  /// Optional line image (for extracted PNG line images).
-  final String? image;
+import 'package:flutter/foundation.dart';
 
-  /// Optional text (for Hazzat/Coptic font rendering).
-  final String? text;
+@immutable
+class HymnSegment {
+  final String type; // "franco" | "hazzat"
+  final String value;
 
-  /// Start time in milliseconds.
-  final int startMs;
+  const HymnSegment({required this.type, required this.value});
 
-  /// Optional end time in milliseconds (if provided in JSON).
-  final int? endMs;
-
-  HymnLine({
-    required this.startMs,
-    this.endMs,
-    this.image,
-    this.text,
-  });
-
-  factory HymnLine.fromJson(Map<String, dynamic> j) => HymnLine(
-        image: j['image'] as String?,
-        text: j['text'] as String?,
-        startMs: ((j['startMs'] ?? j['s']) as num).toInt(),
-        endMs: (j['endMs'] ?? j['e']) == null
-            ? null
-            : ((j['endMs'] ?? j['e']) as num).toInt(),
+  factory HymnSegment.fromJson(Map<String, dynamic> j) => HymnSegment(
+        type: (j['type'] as String?)?.trim() ?? 'hazzat',
+        value: (j['value'] as String?) ?? '',
       );
+
+  Map<String, dynamic> toJson() => {'type': type, 'value': value};
 }
 
+@immutable
+class HymnLine {
+  final int i;
+
+  // canonical fields
+  final int s;
+  final int e;
+  final String? image;
+
+  /// Always populated (either from JSON "segments" or auto-built from legacy fields).
+  final List<HymnSegment> segments;
+
+  const HymnLine({
+    required this.i,
+    required this.s,
+    required this.e,
+    this.image,
+    required this.segments,
+  });
+
+  // ---------- compatibility getters (what your screen expects) ----------
+  int get startMs => s;
+  int get endMs => e;
+
+  /// For legacy UI checks. Returns concatenated values by type.
+  String? get franco {
+    final parts = segments
+        .where((x) => x.type == 'franco')
+        .map((x) => x.value.trim())
+        .where((v) => v.isNotEmpty)
+        .toList();
+    if (parts.isEmpty) return null;
+    return parts.join(' ');
+  }
+
+  /// Your "hazzat/notation" layer. (Your UI currently uses line.text)
+  String? get text {
+    final parts = segments
+        .where((x) => x.type == 'hazzat')
+        .map((x) => x.value)
+        .toList();
+    final out = parts.join('');
+    final trimmed = out.trim();
+    return trimmed.isEmpty ? null : trimmed;
+  }
+  // ---------------------------------------------------------------------
+
+  factory HymnLine.fromJson(Map<String, dynamic> j) {
+    // Prefer new format: "segments"
+    final rawSegments = j['segments'];
+    List<HymnSegment> segs = [];
+
+    if (rawSegments is List) {
+      segs = rawSegments
+          .whereType<Map>()
+          .map((m) => HymnSegment.fromJson(Map<String, dynamic>.from(m)))
+          .where((seg) => seg.value.trim().isNotEmpty)
+          .toList(growable: false);
+    } else {
+      // Fallback legacy format: "franco" + ("text" or "hazzat")
+      final legacyFranco = (j['franco'] as String?)?.trim();
+      final legacyText =
+          (j['text'] as String?)?.trim() ?? (j['hazzat'] as String?)?.trim();
+
+      final tmp = <HymnSegment>[];
+      if (legacyFranco != null && legacyFranco.isNotEmpty) {
+        tmp.add(HymnSegment(type: 'franco', value: legacyFranco));
+      }
+      if (legacyText != null && legacyText.isNotEmpty) {
+        tmp.add(HymnSegment(type: 'hazzat', value: legacyText));
+      }
+      segs = tmp;
+    }
+
+    return HymnLine(
+      i: ((j['i'] ?? 0) as num).toInt(),
+      s: ((j['s'] ?? j['startMs'] ?? 0) as num).toInt(),
+      e: ((j['e'] ?? j['endMs'] ?? 0) as num).toInt(),
+      image: j['image'] as String?,
+      segments: segs,
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'i': i,
+        's': s,
+        'e': e,
+        if (image != null) 'image': image,
+        'segments': segments.map((x) => x.toJson()).toList(),
+      };
+}
+
+@immutable
 class HymnData {
   final String id;
   final String title;
-
-  /// Main font family for hymn text (optional).
-  final String? fontFamily;
-
-  /// Optional author.
+  final String fontFamily;
   final String? author;
 
-  /// Audio asset path (supports "audioAsset" or "audio").
-  final String audioAsset;
+  // canonical field in JSON is "audio"
+  final String audio;
 
-  /// Optional PDF asset path (supports "pdfAsset" or "pdf").
-  final String? pdfAsset;
+  // canonical field in JSON could be "pdf" (or legacy "pdfAsset")
+  final String? pdf;
 
   final List<HymnLine> lines;
 
-  HymnData({
+  const HymnData({
     required this.id,
     required this.title,
-    required this.audioAsset,
+    required this.fontFamily,
+    required this.audio,
     required this.lines,
-    this.pdfAsset,
-    this.fontFamily,
     this.author,
+    this.pdf,
   });
 
-  factory HymnData.fromJson(Map<String, dynamic> j) => HymnData(
-        id: (j['id'] ?? '') as String,
-        title: (j['title'] ?? 'Hymn') as String,
-        fontFamily: j['fontFamily'] as String?,
-        author: j['author'] as String?,
-        audioAsset: (j['audioAsset'] ?? j['audio']) as String,
-        pdfAsset: (j['pdfAsset'] ?? j['pdf']) as String?,
-        lines: (j['lines'] as List)
-            .map((x) => HymnLine.fromJson(x as Map<String, dynamic>))
-            .toList(),
-      );
+  // ---------- compatibility getters (what your screen expects) ----------
+  String get audioAsset => audio;
+  String? get pdfAsset => pdf;
+  // ---------------------------------------------------------------------
+
+  factory HymnData.fromJson(Map<String, dynamic> j) {
+    final rawLines = (j['lines'] as List?) ?? const [];
+
+    return HymnData(
+      id: (j['id'] as String?) ?? '',
+      title: (j['title'] as String?) ?? '',
+      fontFamily: (j['fontFamily'] as String?) ?? 'HazzatFont',
+      author: j['author'] as String?,
+      audio: (j['audio'] as String?) ?? (j['audioAsset'] as String?) ?? '',
+      pdf: (j['pdf'] as String?) ?? (j['pdfAsset'] as String?),
+      lines: rawLines
+          .whereType<Map>()
+          .map((m) => HymnLine.fromJson(Map<String, dynamic>.from(m)))
+          .toList(growable: false),
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'fontFamily': fontFamily,
+        if (author != null) 'author': author,
+        'audio': audio,
+        if (pdf != null) 'pdf': pdf,
+        'lines': lines.map((x) => x.toJson()).toList(),
+      };
 }

@@ -11,23 +11,21 @@ class TextLayer extends StatelessWidget {
     required this.text,
     this.fontFamily,
     this.isActive = false,
-    this.textAlign = TextAlign.center,
+    this.textAlign = TextAlign.center, // ✅ default value
   });
 
   @override
   Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
-
     return Text(
       text,
       textAlign: textAlign,
       style: TextStyle(
-        fontFamily: fontFamily,
-        fontFamilyFallback: const ['CopticFont'],
-        fontSize: 22,
-        height: 1.8,
-        fontWeight: isActive ? FontWeight.w700 : FontWeight.w600,
-        color: isActive ? cs.onSurface : cs.onSurface.withOpacity(0.92),
+        fontFamily: (fontFamily ?? 'HazzatFont').split(',').first.trim(),
+        // fontFamilyFallback: const ['Roboto'],
+        fontSize: 42,
+        height: 1.5,
+        fontWeight: isActive ? FontWeight.w800 : FontWeight.w700,
+        color: Colors.black,
       ),
     );
   }

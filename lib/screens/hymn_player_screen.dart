@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -185,18 +184,40 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
     );
   }
 
-  Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
-    final t = (line.text ?? '').trim();
-    if (t.isEmpty) return const SizedBox.shrink();
+Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
+  final segs = line.segments;
+  if (segs.isEmpty) return const SizedBox.shrink();
 
-    return Hazzat(
-      child: TextLayer(
-        text: t,
-        fontFamily: data.fontFamily,
-        isActive: active,
-      ),
+  final baseColor = Theme.of(context).colorScheme.onSurface.withOpacity(0.92);
+  final activeColor = const Color(0xFFC9A24A);
+  final color = active ? activeColor : baseColor;
+
+  TextStyle styleFor(String type) {
+    return TextStyle(
+      fontFamily: type == 'franco' ? 'Roboto' : data.fontFamily,
+      fontSize: 22,
+      height: 1.8,
+      fontWeight: active ? FontWeight.w700 : FontWeight.w600,
+      color: color,
     );
   }
+
+  // If you want explicit spacing between segments, keep the " " addition below.
+  return Hazzat(
+    child: RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        children: [
+          for (final seg in segs)
+            TextSpan(
+              text: seg.value, // or "${seg.value} "
+              style: styleFor(seg.type),
+            ),
+        ],
+      ),
+    ),
+  );
+}
 
   Widget _buildSingleMode(HymnData data) {
     final line = data.lines[_activeIndex];
@@ -286,7 +307,8 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
               final key = _rowKeys.putIfAbsent(i, () => GlobalKey());
 
               final hasImage = (line.image ?? '').trim().isNotEmpty;
-              final hasText = (line.text ?? '').trim().isNotEmpty;
+              final hasText = ((line.text ?? '').trim().isNotEmpty) ||
+                  ((line.franco ?? '').trim().isNotEmpty);
 
               return Container(
                 key: key,
