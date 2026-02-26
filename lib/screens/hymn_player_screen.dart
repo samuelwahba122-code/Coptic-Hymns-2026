@@ -188,37 +188,50 @@ Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
   final segs = line.segments;
   if (segs.isEmpty) return const SizedBox.shrink();
 
-  final baseColor = Theme.of(context).colorScheme.onSurface.withOpacity(0.92);
-  final activeColor = const Color(0xFFC9A24A);
-  final color = active ? activeColor : baseColor;
+  // ignore: unused_local_variable
+  final screenWidth = MediaQuery.of(context).size.width;
+  final screen = MediaQuery.of(context).size;
+
+// Scale based on both width and height
+final double baseSize = (screen.height * 0.05)
+    .clamp(28.0, 60.0);
+  const Color francoColor = Color(0xFFD4AF37);
+  // ignore: unused_local_variable
+  const Color hazzatColor = Color(0xFFFFFFFF);
 
   TextStyle styleFor(String type) {
+      const francoColor = Color(0xFFD4AF37); // gold
+      const copticColor = Color.fromARGB(255, 0, 0, 0); // soft white
+      const hazzatColor = Color.fromARGB(255, 0, 0, 0); // strong white
+    final isFranco = type == 'franco';
+
     return TextStyle(
-      fontFamily: type == 'franco' ? 'Roboto' : data.fontFamily,
-      fontSize: 22,
-      height: 1.8,
-      fontWeight: active ? FontWeight.w700 : FontWeight.w600,
-      color: color,
+      fontFamily: isFranco ? 'Roboto' : data.fontFamily,
+      fontSize: baseSize,
+      height: 1.7,
+      fontWeight: FontWeight.w700,
+      color: isFranco ? francoColor : const Color.fromARGB(255, 0, 0, 0),
     );
   }
 
-  // If you want explicit spacing between segments, keep the " " addition below.
-  return Hazzat(
-    child: RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-        children: [
-          for (final seg in segs)
-            TextSpan(
-              text: seg.value, // or "${seg.value} "
-              style: styleFor(seg.type),
-            ),
-        ],
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+    child: Hazzat(
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          children: [
+            for (final seg in segs)
+              TextSpan(
+                text: "${seg.value} ",
+                style: styleFor(seg.type),
+              ),
+          ],
+        ),
       ),
     ),
   );
 }
-
   Widget _buildSingleMode(HymnData data) {
     final line = data.lines[_activeIndex];
     final hasImage = (line.image ?? '').trim().isNotEmpty;

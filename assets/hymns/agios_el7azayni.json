@@ -1,8 +1,10 @@
 {
     "id": "hazzat_hymn_001",
-    "title": "Agios El7azayni",
+    "title": "Agios",
     "fontFamily": "HazzatFont",
+    "pdfAsset": "assets/pdfs/agios.pdf",
     "author": "Ibrahim Ayad",
+
     "audio": "assets/audio/agios.mp3",
     "lines": [
       { "i": 1, "franco": "A ", "hazzat": "(z x x e.cdaw +edd.cd.z w zz zz ws.)2", "s": 0, "e": 60504 },
@@ -113,6 +115,7 @@
       { "i": 28, "segments": [
         { "type": "hazzat", "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS" },
         { "type": "franco", "value": " S" }
-      ], "s": 1069000, "e": 1115000 }
+      ],
+      "s": 1069000, "e": 1115000 }
 ]
   }

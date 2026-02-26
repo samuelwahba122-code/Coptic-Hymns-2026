@@ -57,8 +57,8 @@
         "title": "Agios El7azayni",
         "hymns": [
           {
-            "id": "hazzat_hymn_001",
-            "title": "Agios El7azayni",
+            "id": "",
+            "title": "Agios El-7azayni",
             "author": "Ibrahim Ayad",
             "jsonAsset": "assets/hymns/agios_el7azayni.json"
           }
