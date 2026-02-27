@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:hymn_app/services/stats_service.dart';
 import '../models/library_models.dart';
 import 'hymns_screen.dart';
 
@@ -55,6 +55,23 @@ class _GroupsScreenState extends State<GroupsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Hymns Groups"),
+        actions: [
+          FutureBuilder(
+            future: StatsService.instance.getStats(),
+            builder: (context, snap) {
+              final xp = snap.data?.xp ?? 0;
+              return Padding(
+                padding: const EdgeInsets.only(right: 12),
+                child: Center(
+                  child: Chip(
+                    label: Text("XP $xp"),
+                    visualDensity: VisualDensity.compact,
+                  ),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),

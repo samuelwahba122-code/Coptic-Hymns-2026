@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import '../services/progress_service.dart';
+import '../services/stats_service.dart';
 import '../audio/shared_audio_player.dart';
 import '../models/hymn_models.dart';
 import '../widgets/audio_controls.dart';
@@ -17,13 +18,15 @@ class HymnPlayerScreen extends StatefulWidget {
   const HymnPlayerScreen({
     super.key,
     required this.hymnJsonAsset,
-    required this.hymnTitle,
+    required this.hymnId,
     this.author,
+    this.resumePositionMs,
   });
 
   final String hymnJsonAsset;
-  final String hymnTitle;
+  final String hymnId;
   final String? author;
+  final int? resumePositionMs;
 
   @override
   State<HymnPlayerScreen> createState() => _HymnPlayerScreenState();
@@ -40,6 +43,8 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
   String? _error;
 
   int _activeIndex = 0;
+
+  int? _lastPosMs;
 
   // Settings
   bool _followAudio = true;
@@ -93,6 +98,11 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
 
       await _shared.loadAssetIfNeeded(data.audioAsset);
 
+      final resume = widget.resumePositionMs;
+        if (resume != null && resume > 0) {
+          await _shared.player.seek(Duration(milliseconds: resume));
+        }
+
       _playingSub?.cancel();
       _playingSub = _shared.player.playingStream.listen((playing) {
         _audioPlaying = playing;
@@ -103,18 +113,39 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
         }
       });
 
-      _positionSub?.cancel();
-      _positionSub = _shared.player.positionStream.listen((pos) async {
-        if (!_followAudio) return;
+_positionSub?.cancel();
+_lastPosMs = null;
 
-        final ms = pos.inMilliseconds;
-        final idx = _findActiveLine(data.lines, ms);
+_positionSub = _shared.player.positionStream.listen((pos) async {
+  final d = data; // the loaded hymn data inside _load()
+  final ms = pos.inMilliseconds;
 
-        if (idx != _activeIndex && mounted) {
-          setState(() => _activeIndex = idx);
-          await _ensureLineVisible(idx);
-        }
-      });
+  // 1) listening time (optional but useful)
+  final prev = _lastPosMs;
+  if (prev != null) {
+    final delta = ms - prev;
+    if (delta > 0 && delta < 5000) {
+      await StatsService.instance.addListeningMs(delta);
+    }
+  }
+  _lastPosMs = ms;
+
+  // 2) progress + XP (always)
+  await ProgressService.instance.updateFromPosition(
+    hymnId: d.id,
+    positionMs: ms,
+    lines: d.lines,
+  );
+
+  // 3) your existing follow/highlight behavior
+  if (!_followAudio) return;
+
+  final idx = _findActiveLine(d.lines, ms);
+  if (idx != _activeIndex && mounted) {
+    setState(() => _activeIndex = idx);
+    await _ensureLineVisible(idx);
+  }
+});
 
       if (mounted) setState(() => _data = data);
     } catch (e) {
@@ -434,7 +465,7 @@ final double baseSize = (screen.height * 0.05)
   Widget build(BuildContext context) {
     if (_error != null) {
       return Scaffold(
-        appBar: AppBar(title: Text(widget.hymnTitle)),
+        appBar: AppBar(title: Text(widget.hymnId)),
         body: Center(child: Text(_error!)),
       );
     }
