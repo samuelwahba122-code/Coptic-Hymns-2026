@@ -48,24 +48,21 @@
           "title": "Ethve Ti Anastsees",
           "author": "Ibrahim Ayad",
           "jsonAsset": "assets/hymns/ethve_ti_anastsees.json"
-        }
-
-      ]
-    },
-      {
-        "id": "hazzat",
-        "title": "Agios El7azayni",
-        "hymns": [
+        },
+                {
+          "id": "",
+          "title": "Agios El-7azayni",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/agios_el7azayni.json"
+        },
           {
             "id": "",
-            "title": "Agios El-7azayni",
+            "title": "Omonogenis",
             "author": "Ibrahim Ayad",
-            "jsonAsset": "assets/hymns/agios_el7azayni.json"
+            "jsonAsset": "assets/hymns/omonogenis.json"
           }
-        ]
-      }
-
-
-
+      ]
+    }
   ]
 }
+

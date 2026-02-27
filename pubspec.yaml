@@ -25,6 +25,10 @@ flutter:
     - assets/pdfs/
     - assets/images/
     - assets/icon/
+    - assets/lines/
+    - assets/lines/oran_enshosho/
+    - assets/lines/ethve_ti_anastsees/
+
 
   fonts:
     - family: HazzatFont

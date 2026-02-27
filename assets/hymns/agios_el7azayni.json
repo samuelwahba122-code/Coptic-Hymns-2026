@@ -22,7 +22,8 @@
       { "i": 3, "segments": [
         { "type": "hazzat", "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS " },
         { "type": "franco", "value": "C" }
-      ], "s": 93204, "e": 142298 },
+      ], 
+      "s": 93204, "e": 142298 },
 
       { "i": 4,"franco": "O ", "hazzat": " zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.", "s": 142298, "e": 174818 },
       { "i": 5, "hazzat": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.", "s": 174818, "e": 199136 },

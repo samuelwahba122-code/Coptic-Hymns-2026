@@ -1,0 +1,212 @@
+{
+  "id": "omonogenis",
+  "title": "Omonogenis",
+  "fontFamily": "HazzatFont",
+  "pdfAsset": "assets/pdfs/omonogenis.pdf",
+  "author": "Ibrahim Ayad",
+  "audio": "assets/audio/omonogenis.mp3",
+  "lines": [
+    { "i": 1, "segments": [
+        { "type": "franco", "value": "O" },
+        { "type": "hazzat", "value": "xc" },
+        { "type": "franco", "value": "MO" },
+        { "type": "hazzat", "value": "zz.cd.xs.z vv.c zA A.zzw z xs." }
+      ], "s": 0, "e": 41167 },
+
+    { "i": 2, "segments": [
+        { "type": "franco", "value": "NO" },
+        { "type": "hazzat", "value": "xc zz.cd.xs.z vv.c zA A.zzw z xs." }
+      ], "s": 41167, "e": 77899 },
+
+    { "i": 3, "segments": [
+        { "type": "franco", "value": "GE" },
+        { "type": "hazzat", "value": "zz x.zzw zz.c z" },
+        { "type": "franco", "value": "NI" },
+        { "type": "hazzat", "value": "xx." }
+      ], "s": 77899, "e": 95192 },
+
+    { "i": 4, "segments": [
+        { "type": "hazzat", "value": "ze x.x x x.x xx." }
+      ], "s": 95192, "e": 111829 },
+
+    { "i": 5, "segments": [
+        { "type": "hazzat", "value": "ze x.x x x.+x zz." }
+      ], "s": 111829, "e": 127192 },
+
+    { "i": 6, "segments": [
+        { "type": "hazzat", "value": "zzw zz.zc zzw zz.zz x" },
+        { "type": "franco", "value": "S" },
+        { "type": "hazzat", "value": "`zz x" },
+        { "type": "franco", "value": "EIO " },
+        { "type": "hazzat", "value": "A A" },
+        { "type": "franco", "value": "C" },
+        { "type": "hazzat", "value": "." }
+      ], "s": 127192, "e": 152792 },
+
+    { "i": 7, "segments": [
+        { "type": "franco", "value": "KE" },
+        { "type": "hazzat", "value": "zzw x" },
+        { "type": "franco", "value": "LO" },
+        { "type": "hazzat", "value": "zz." },
+        { "type": "franco", "value": "GO" },
+        { "type": "hazzat", "value": "v -c.x x xx." }
+      ], "s": 152792, "e": 167499 },
+
+    { "i": 8, "segments": [
+        { "type": "hazzat", "value": "ze x.x x x.x xx." }
+      ], "s": 167499, "e": 191192 },
+
+    { "i": 9, "segments": [
+        { "type": "hazzat", "value": "ze x.x x x.+x zz." }
+      ], "s": 191192, "e": 206552 },
+
+    { "i": 10, "segments": [
+        { "type": "hazzat", "value": "zzw zz.zc zzw zz.zz x" },
+        { "type": "franco", "value": "C TO" },
+        { "type": "hazzat", "value": "zz x" },
+        { "type": "franco", "value": "THE" },
+        { "type": "hazzat", "value": "zz x" },
+        { "type": "franco", "value": "O " },
+        { "type": "hazzat", "value": "A A." }
+      ], "s": 206552, "e": 235337 },
+
+    { "i": 11, "segments": [
+        { "type": "hazzat", "value": "zzw x zz.-v -c.x x xx." }
+      ], "s": 235337, "e": 258379 },
+
+    { "i": 12, "segments": [
+        { "type": "hazzat", "value": "ze x.x x x.x xx." }
+      ], "s": 258379, "e": 274392 },
+
+    { "i": 13, "segments": [
+        { "type": "hazzat", "value": "ze x.x x -zzx.cd.zz zrff." }
+      ], "s": 274392, "e": 295499 },
+
+    { "i": 14, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd." },
+        { "type": "franco", "value": "THA" },
+        { "type": "hazzat", "value": "-bb." },
+        { "type": "franco", "value": "NA" },
+        { "type": "hazzat", "value": "zw cd.xx" },
+        { "type": "franco", "value": "TO " },
+        { "type": "hazzat", "value": "A A" },
+        { "type": "franco", "value": "C" }
+      ], "s": 295499, "e": 323029 },
+
+    { "i": 15, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd." },
+        { "type": "franco", "value": "THA" },
+        { "type": "hazzat", "value": "-bb." },
+        { "type": "franco", "value": "NA" },
+        { "type": "hazzat", "value": "zw cd.xx" },
+        { "type": "franco", "value": "TO" },
+        { "type": "hazzat", "value": " A A.zzw x.ze cdd.(-v.-v.-cd.)2" },
+        { "type": "franco", "value": "C" }
+      ], "s": 323029, "e": 382039 },
+
+    { "i": 16, "segments": [
+        { "type": "franco", "value": "ATHANATOS YPARKHON KE KATA ZIKSA" },
+        { "type": "hazzat", "value": "zz.ze zz" },
+        { "type": "franco", "value": "MENO" },
+        { "type": "hazzat", "value": "xx " },
+        { "type": "franco", "value": "S" }
+      ], "s": 382039, "e": 404427 },
+
+    { "i": 17, "segments": [
+        { "type": "franco", "value": "ZIATEN IMITERAN SOTIRIAN SARKOTHEN EINE" }
+      ], "s": 404427, "e": 427469 },
+
+    { "i": 18, "segments": [
+        { "type": "franco", "value": "EK TIS AGIAS THEOTOKOS KE AEI PARTHENOU MARIAS PARTHENOU MARIAS" }
+      ], "s": 427469, "e": 467148 },
+
+    { "i": 19, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd.-bb ." },
+        { "type": "franco", "value": "T. RE" },
+        { "type": "hazzat", "value": "zw cd.xx " },
+        { "type": "franco", "value": "PTO" },
+        { "type": "hazzat", "value": " A A " },
+        { "type": "franco", "value": "C" }
+      ], "s": 467148, "e": 492000 },
+
+    { "i": 20, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd.-bb " },
+        { "type": "franco", "value": "T.  RE " },
+        { "type": "hazzat", "value": "zw cd.xx " },
+        { "type": "franco", "value": "PTO" },
+        { "type": "hazzat", "value": "ptw A A.zzw x.ze cdd.(-v.-v.-cd.)2" }
+      ], "s": 492000, "e": 555283 },
+
+    { "i": 21, "segments": [
+        { "type": "franco", "value": "ATREPTOS ENAN ETHROPOSAS, O ESTAVROTIS TI EKHRESTI O THEOS." }
+      ], "s": 555283, "e": 581724 },
+
+    { "i": 22, "segments": [
+        { "type": "franco", "value": "THANATO THANATON PATISAS, IS OUN TIS AGIAS ATRI ADOS," }
+      ], "s": 581724, "e": 608599 },
+
+    { "i": 23, "segments": [
+        { "type": "franco", "value": "SYN DOXAZOMENOS" }
+      ], "s": 608599, "e": 620747 },
+
+    { "i": 24, "segments": [
+        { "type": "franco", "value": "TO PATRI KE TO AGIO EPNEVMA TI SOSON IMAS." }
+      ], "s": 620747, "e": 663511 },
+
+    { "i": 25, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd.-bb .zw cd.xx " },
+        { "type": "franco", "value": "GIO " },
+        { "type": "hazzat", "value": " A A " },
+        { "type": "franco", "value": "S" }
+      ], "s": 663511, "e": 691541 },
+
+    { "i": 26, "segments": [
+        { "type": "franco", "value": "A" },
+        { "type": "hazzat", "value": "zw cd.-bb .zw cd.xx " },
+        { "type": "franco", "value": "GIO " },
+        { "type": "hazzat", "value": " A A zzw x.ze cdd.(-v.-v.-cd.)2" },
+        { "type": "franco", "value": "S" }
+      ], "s": 691541, "e": 753947 },
+
+    { "i": 27, "segments": [
+        { "type": "franco", "value": "AGIOS O THEOS O ZI IMAS AN ETHROPOS" }
+      ], "s": 754519, "e": 774869 },
+
+    { "i": 28, "segments": [
+        { "type": "franco", "value": "GE GONOS ATREPTOS KE MENAS THEOS" }
+      ], "s": 774869, "e": 794829 },
+
+    { "i": 29, "segments": [
+        { "type": "franco", "value": "AGIOS IS SHIROS O ENAS THENIATO EVIR IKON" }
+      ], "s": 794829, "e": 817867 },
+
+    { "i": 30, "segments": [
+        { "type": "franco", "value": "TIS ES SHIROS I BI ZI EKSAMENOS" }
+      ], "s": 817867, "e": 836439 },
+
+    { "i": 31, "segments": [
+        { "type": "franco", "value": "AGIOS ATHANATOS O STAVROTIS ZI IMAS" }
+      ], "s": 836439, "e": 854987 },
+
+    { "i": 32, "segments": [
+        { "type": "franco", "value": "OTON ZI ESTAVRO THANATON EPOMENAS" }
+      ], "s": 854987, "e": 872907 },
+
+    { "i": 33, "segments": [
+        { "type": "franco", "value": "SAR KE KE ZI EKSASOUS EN THANATO" }
+      ], "s": 872907, "e": 891479 },
+
+    { "i": 34, "segments": [
+        { "type": "franco", "value": "GE GONOS YPARSHIS ATHANATOS AGIA TRIAS " }
+      ], "s": 891479, "e": 910051 },
+
+    { "i": 35, "segments": [
+        { "type": "franco", "value": "ELEISON IMAS." }
+      ], "s": 910051, "e": 936141 }
+  ]
+}
