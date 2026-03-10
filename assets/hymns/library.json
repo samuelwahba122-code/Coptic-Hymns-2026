@@ -49,18 +49,25 @@
           "author": "Ibrahim Ayad",
           "jsonAsset": "assets/hymns/ethve_ti_anastsees.json"
         },
-                {
+        {
           "id": "",
           "title": "Agios El-7azayni",
           "author": "Ibrahim Ayad",
           "jsonAsset": "assets/hymns/agios_el7azayni.json"
         },
-          {
+        {
             "id": "",
             "title": "Omonogenis",
             "author": "Ibrahim Ayad",
             "jsonAsset": "assets/hymns/omonogenis.json"
-          }
+        },
+        {
+          "id": "",
+          "title": "Fai Etaf Enf",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/faietafenf.json"
+        }
+        
       ]
     }
   ]

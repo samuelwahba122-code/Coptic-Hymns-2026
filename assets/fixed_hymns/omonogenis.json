@@ -1,0 +1,324 @@
+{
+  "id": "omonogenis",
+  "title": "Omonogenis",
+  "fontFamily": "HazzatFont",
+  "pdfAsset": "assets/pdfs/omonogenis.pdf",
+  "author": "Ibrahim Ayad",
+  "audio": "assets/audio/omonogenis.mp3",
+  "lines": [
+    {
+      "i": 1,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "xc "
+        },
+        {
+          "type": "franco",
+          "value": "MO "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz.cd.xs.z vv.c zA A.zzw z xs. "
+        }
+      ],
+      "s": 0,
+      "e": 41167
+    },
+    {
+      "i": 2,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "NO "
+        },
+        {
+          "type": "hazzat",
+          "value": "xc zz.cd.xs.z vv.c zA A.zzw z xs. "
+        }
+      ],
+      "s": 41167,
+      "e": 77899
+    },
+    {
+      "i": 3,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "GE "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz x.zzw zz.c z "
+        },
+        {
+          "type": "franco",
+          "value": "NI "
+        },
+        {
+          "type": "hazzat",
+          "value": "xx. "
+        }
+      ],
+      "s": 77899,
+      "e": 95192
+    },
+    {
+      "i": 6,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zzw zz.zc zzw zz.zz x "
+        },
+        {
+          "type": "franco",
+          "value": "S "
+        },
+        {
+          "type": "hazzat",
+          "value": "`zz x "
+        },
+        {
+          "type": "franco",
+          "value": "EIO "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A "
+        },
+        {
+          "type": "franco",
+          "value": "C "
+        },
+        {
+          "type": "hazzat",
+          "value": ". "
+        }
+      ],
+      "s": 127192,
+      "e": 152792
+    },
+    {
+      "i": 7,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "KE "
+        },
+        {
+          "type": "hazzat",
+          "value": "zzw x "
+        },
+        {
+          "type": "franco",
+          "value": "LO "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz. "
+        },
+        {
+          "type": "franco",
+          "value": "GO "
+        },
+        {
+          "type": "hazzat",
+          "value": "v -c.x x xx. "
+        }
+      ],
+      "s": 152792,
+      "e": 167499
+    },
+    {
+      "i": 10,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zzw zz.zc zzw zz.zz x "
+        },
+        {
+          "type": "franco",
+          "value": "C TO "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz x "
+        },
+        {
+          "type": "franco",
+          "value": "THE "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz x "
+        },
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A. "
+        }
+      ],
+      "s": 206552,
+      "e": 235337
+    },
+    {
+      "i": 14,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "A "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd. "
+        },
+        {
+          "type": "franco",
+          "value": "THA "
+        },
+        {
+          "type": "hazzat",
+          "value": "-bb. "
+        },
+        {
+          "type": "franco",
+          "value": "NA "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.xx "
+        },
+        {
+          "type": "franco",
+          "value": "TO "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A "
+        },
+        {
+          "type": "franco",
+          "value": "C "
+        }
+      ],
+      "s": 295499,
+      "e": 323029
+    },
+    {
+      "i": 15,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "A "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd. "
+        },
+        {
+          "type": "franco",
+          "value": "THA "
+        },
+        {
+          "type": "hazzat",
+          "value": "-bb. "
+        },
+        {
+          "type": "franco",
+          "value": "NA "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.xx "
+        },
+        {
+          "type": "franco",
+          "value": "TO "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A.zzw x.ze cdd.(-v.-v.-cd.)2 "
+        },
+        {
+          "type": "franco",
+          "value": "C "
+        }
+      ],
+      "s": 323029,
+      "e": 382039
+    },
+    {
+      "i": 19,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "A "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.-bb . "
+        },
+        {
+          "type": "franco",
+          "value": "T. RE "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.xx "
+        },
+        {
+          "type": "franco",
+          "value": "PTO "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A "
+        },
+        {
+          "type": "franco",
+          "value": "C "
+        }
+      ],
+      "s": 467148,
+      "e": 492000
+    },
+    {
+      "i": 20,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "A "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.-bb "
+        },
+        {
+          "type": "franco",
+          "value": "T. RE "
+        },
+        {
+          "type": "hazzat",
+          "value": "zw cd.xx "
+        },
+        {
+          "type": "franco",
+          "value": "PTO "
+        },
+        {
+          "type": "hazzat",
+          "value": "ptw A A.zzw x.ze cdd.(-v.-v.-cd.)2 "
+        }
+      ],
+      "s": 492000,
+      "e": 555283
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "id": "hazzat_hymn_001",
+  "title": "Agios",
+  "fontFamily": "HazzatFont",
+  "pdfAsset": "assets/pdfs/agios.pdf",
+  "author": "Ibrahim Ayad",
+  "audio": "assets/audio/agios.mp3",
+  "lines": [
+    {
+      "i": 1,
+      "franco": "A ",
+      "hazzat": "(z x x e.cdaw +edd.cd.z w zz zz ws.)2",
+      "s": 0,
+      "e": 60504
+    },
+    {
+      "i": 2,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "Gi "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 60504,
+      "e": 93204
+    },
+    {
+      "i": 3,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": "C "
+        }
+      ],
+      "s": 93204,
+      "e": 142298
+    },
+    {
+      "i": 4,
+      "franco": "O ",
+      "hazzat": " zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.",
+      "s": 142298,
+      "e": 174818
+    },
+    {
+      "i": 5,
+      "hazzat": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.",
+      "s": 174818,
+      "e": 199136
+    },
+    {
+      "i": 6,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "The "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 199136,
+      "e": 231010
+    },
+    {
+      "i": 7,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " The . "
+        }
+      ],
+      "s": 231010,
+      "e": 278676
+    },
+    {
+      "i": 8,
+      "franco": "A ",
+      "hazzat": "(z x x e.cdaw +edd.cd.z w zz zz ws.)2",
+      "s": 278676,
+      "e": 339230
+    },
+    {
+      "i": 9,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "Gi "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 339230,
+      "e": 372512
+    },
+    {
+      "i": 10,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " C "
+        }
+      ],
+      "s": 372512,
+      "e": 421256
+    },
+    {
+      "i": 11,
+      "franco": "EsChe ",
+      "hazzat": "zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.",
+      "s": 421256,
+      "e": 453146
+    },
+    {
+      "i": 12,
+      "hazzat": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.",
+      "s": 453146,
+      "e": 478356
+    },
+    {
+      "i": 13,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "Ro "
+        },
+        {
+          "type": "hazzat",
+          "value": " z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 478356,
+      "e": 509580
+    },
+    {
+      "i": 14,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " S "
+        }
+      ],
+      "s": 509580,
+      "e": 557982
+    },
+    {
+      "i": 15,
+      "franco": "A ",
+      "hazzat": "(z x x e.cdaw +edd.cd.z w zz zz ws.)2",
+      "s": 557982,
+      "e": 619738
+    },
+    {
+      "i": 16,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "Gi "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "O "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 619738,
+      "e": 653018
+    },
+    {
+      "i": 17,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " S "
+        }
+      ],
+      "s": 653018,
+      "e": 701658
+    },
+    {
+      "i": 18,
+      "franco": "Atha",
+      "hazzat": " zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.",
+      "s": 701658,
+      "e": 734624
+    },
+    {
+      "i": 19,
+      "hazzat": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.",
+      "s": 734624,
+      "e": 760796
+    },
+    {
+      "i": 20,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "Na  "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "To "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 760796,
+      "e": 791694
+    },
+    {
+      "i": 21,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " S "
+        }
+      ],
+      "s": 791694,
+      "e": 839320
+    },
+    {
+      "i": 22,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "O Esta "
+        },
+        {
+          "type": "hazzat",
+          "value": "(z x x e.cdaw +edd.cd.z w zz zz ws.)2 "
+        },
+        {
+          "type": "franco",
+          "value": " V "
+        }
+      ],
+      "s": 839320,
+      "e": 899298
+    },
+    {
+      "i": 23,
+      "segments": [
+        {
+          "type": "franco",
+          "value": "Ro "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "Thi "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 899298,
+      "e": 930016
+    },
+    {
+      "i": 24,
+      "hazzat": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS",
+      "s": 930016,
+      "e": 967576
+    },
+    {
+      "i": 25,
+      "franco": "Es Zih",
+      "hazzat": "zzedd edd.xw xw edd.cdaw +edd.cd.z w zz zz ws.",
+      "s": 979000,
+      "e": 1011500
+    },
+    {
+      "i": 26,
+      "hazzat": "x zzazzazz w xs.zw +zz.cd.zrf zz ws.",
+      "s": 1011500,
+      "e": 1037000
+    },
+    {
+      "i": 27,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "cd x "
+        },
+        {
+          "type": "franco",
+          "value": "Ma "
+        },
+        {
+          "type": "hazzat",
+          "value": "z q w.c -zz (q w zw)2.zw.x -zz (q w zw )2. "
+        }
+      ],
+      "s": 1037000,
+      "e": 1069000
+    },
+    {
+      "i": 28,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "zrf x.zrf.z +xe.z w x wss.z zw +xaw x.z zw.w zz ws.-x x x zz xSxS "
+        },
+        {
+          "type": "franco",
+          "value": " S "
+        }
+      ],
+      "s": 1069000,
+      "e": 1115000
+    }
+  ]
+}

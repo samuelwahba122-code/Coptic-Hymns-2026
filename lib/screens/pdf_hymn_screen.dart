@@ -10,11 +10,13 @@ class PdfHymnScreen extends StatefulWidget {
     required this.title,
     required this.pdfAssetPath,
     required this.sharedPlayer,
+    required this.initialPage,
   });
 
   final String title;
   final String pdfAssetPath;
   final AudioPlayer sharedPlayer;
+  final int initialPage;
 
   @override
   State<PdfHymnScreen> createState() => _PdfHymnScreenState();
@@ -26,8 +28,10 @@ class _PdfHymnScreenState extends State<PdfHymnScreen> {
   @override
   void initState() {
     super.initState();
+    
     _pdfController = PdfControllerPinch(
       document: PdfDocument.openAsset(widget.pdfAssetPath),
+      initialPage: widget.initialPage,
     );
   }
 

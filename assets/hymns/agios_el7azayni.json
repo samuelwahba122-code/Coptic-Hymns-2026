@@ -2,8 +2,9 @@
     "id": "hazzat_hymn_001",
     "title": "Agios",
     "fontFamily": "HazzatFont",
-    "pdfAsset": "assets/pdfs/agios.pdf",
+    "pdfAsset": "assets/pdfs/Passion_Week_Hazzat_Booklet.pdf",
     "author": "Ibrahim Ayad",
+    "initialPdfPage": 43,
 
     "audio": "assets/audio/agios.mp3",
     "lines": [

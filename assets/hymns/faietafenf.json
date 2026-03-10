@@ -1,0 +1,530 @@
+{
+  "id": "faietafenf",
+  "title": "Fai Etaf Enf",
+  "fontFamily": "HazzatFont",
+  "pdfAsset": "assets/pdfs/Passion_Week_Hazzat_Booklet.pdf",
+  "initialPdfPage": 16,
+  "audio": "assets/audio/Fai_Etaf-enf.mp3",
+  "author": "Ibrahim Ayad",
+  "lines": [
+    {
+      "i": 1,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "Va "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz x "
+        },
+        {
+          "type": "coptic",
+          "value": "i `e "
+        },
+        {
+          "type": "hazzat",
+          "value": "x.c xs.cd.zzw zzw zzw z. "
+        }
+      ],
+      "s": 0,
+      "e": 38297,
+      "sourceIndex": 1,
+      "mixed": "Vazz x i `ex.c xs.cd.zzw zzw zzw z.",
+      "coptic": "Vai `e"
+    },
+    {
+      "i": 2,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "z "
+        },
+        {
+          "type": "coptic",
+          "value": "ta "
+        },
+        {
+          "type": "hazzat",
+          "value": "cd "
+        },
+        {
+          "type": "coptic",
+          "value": "fe "
+        },
+        {
+          "type": "hazzat",
+          "value": "x x zz cd.x xc xs. "
+        }
+      ],
+      "s": 37597,
+      "e": 58777,
+      "sourceIndex": 2,
+      "mixed": "ztacd fex x zz cd.x xc xs.",
+      "coptic": "tafe"
+    },
+    {
+      "i": 3,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "x x.c w zz x zz (x x x zz)2 "
+        }
+      ],
+      "s": 58777,
+      "e": 84375,
+      "sourceIndex": 3,
+      "mixed": "x x.c w zz x zz (x x x zz)2",
+      "coptic": ""
+    },
+    {
+      "i": 4,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "+c vf.x "
+        },
+        {
+          "type": "coptic",
+          "value": "nf ` "
+        },
+        {
+          "type": "hazzat",
+          "value": "x "
+        },
+        {
+          "type": "coptic",
+          "value": "e "
+        },
+
+        {
+          "type": "coptic",
+          "value": "` "
+        },
+        {
+          "type": "hazzat",
+          "value": "z "
+        },
+        {
+          "type": "coptic",
+          "value": "psw "
+        },
+        {
+          "type": "hazzat",
+          "value": "x x zz cd.x xc xs. "
+        }
+      ],
+      "s": 84375,
+      "e": 113369,
+      "sourceIndex": 4,
+      "mixed": "+c vf.x nf `xez `zpswx x zz cd.x xc xs.",
+      "coptic": "nf `e `psw"
+    },
+    {
+      "i": 5,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "x x.c w -zzzw -v -v wss. "
+        }
+      ],
+      "s": 113369,
+      "e": 132179,
+      "sourceIndex": 5,
+      "mixed": "x x.c w -zzzw -v -v wss.",
+      "coptic": ""
+    },
+    {
+      "i": 6,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "+xx "
+        },
+        {
+          "type": "coptic",
+          "value": "i "
+        },
+        {
+          "type": "hazzat",
+          "value": "`x cd.cdd.zed z "
+        },
+        {
+          "type": "coptic",
+          "value": "nou "
+        },
+        {
+          "type": "hazzat",
+          "value": "A A. "
+        }
+      ],
+      "s": 132179,
+      "e": 150231,
+      "sourceIndex": 6,
+      "mixed": "+xx i `x cd.cdd.zed znou A A. ",
+      "coptic": "i nou "
+    },
+    {
+      "i": 7,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "ze cd.x xc x.x x.c w zz.x c xs. "
+        }
+      ],
+      "s": 150231,
+      "e": 175309,
+      "sourceIndex": 7,
+      "mixed": "ze cd.x xc x.x x.c w zz.x c xs. ",
+      "coptic": ""
+    },
+    {
+      "i": 8,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "c z cc.v.zz x "
+        },
+        {
+          "type": "coptic",
+          "value": ";u "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz "
+        },
+        {
+          "type": "coptic",
+          "value": "ci "
+        },
+        {
+          "type": "hazzat",
+          "value": "v v ws. "
+        }
+      ],
+      "s": 175309,
+      "e": 199131,
+      "sourceIndex": 8,
+      "mixed": "c z cc.v.zz x ;uzzciv v ws.",
+      "coptic": ";uci"
+    },
+    {
+      "i": 9,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "x x x cc.zzw x x.zw x ` "
+        },
+        {
+          "type": "coptic",
+          "value": "a "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz "
+        },
+        {
+          "type": "coptic",
+          "value": "e "
+        },
+        {
+          "type": "hazzat",
+          "value": "x "
+        },
+        {
+          "type": "coptic",
+          "value": "csy "
+        },
+        {
+          "type": "hazzat",
+          "value": "cc.x cc -v. "
+        }
+      ],
+      "s": 199131,
+      "e": 232725,
+      "sourceIndex": 9,
+      "mixed": "x x x cc.zzw x x.zw x `azz ex csycc.x cc -v.",
+      "coptic": "a ecsy"
+    },
+    {
+      "i": 10,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "xx.xx z x xs cdd. "
+        }
+      ],
+      "s": 232725,
+      "e": 245789,
+      "sourceIndex": 10,
+      "mixed": "xx.xx z x xs cdd.",
+      "coptic": ""
+    },
+    {
+      "i": 11,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "xx "
+        },
+        {
+          "type": "coptic",
+          "value": "p hi "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz xx.ze cd ze -v.xx.xx z x xs cdd. "
+        }
+      ],
+      "s": 245789,
+      "e": 273111,
+      "sourceIndex": 11,
+      "mixed": "xx p hizz xx.ze cd ze -v.xx.xx z x xs cdd.",
+      "coptic": "p hi"
+    },
+    {
+      "i": 12,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "je "
+        },
+        {
+          "type": "hazzat",
+          "value": "xx "
+        },
+        {
+          "type": "coptic",
+          "value": "n pi "
+        },
+        {
+          "type": "hazzat",
+          "value": "xx.(zz x cd.ze x xx.)2 xx -bg.cd cdd. "
+        }
+      ],
+      "s": 273111,
+      "e": 308687,
+      "sourceIndex": 12,
+      "mixed": "jexx n pixx.(zz x cd.ze x xx.)2 xx -bg.cd cdd.",
+      "coptic": "jen pi`"
+    },
+    {
+      "i": 13,
+      "segments": [
+        {
+          "type": "hazzat",
+          "value": "+cc z vf c `z "
+        },
+        {
+          "type": "coptic",
+          "value": "cta "
+        },
+        {
+          "type": "hazzat",
+          "value": "x x "
+        },
+        {
+          "type": "coptic",
+          "value": "uro "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz.z x vf.x v x cdd "
+        },
+        {
+          "type": "coptic",
+          "value": "c "
+        }
+      ],
+      "s": 308687,
+      "e": 340689,
+      "sourceIndex": 13,
+      "mixed": "+cc z vf c `zctax x urozz.z x vf.x v x cdd c",
+      "coptic": "ctauroc"
+    },
+    {
+      "i": 14,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "qa "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz "
+        },
+        {
+          "type": "coptic",
+          "value": "` "
+        },
+        {
+          "type": "hazzat",
+          "value": "z "
+        },
+        {
+          "type": "coptic",
+          "value": "pou "
+        },
+        {
+          "type": "hazzat",
+          "value": "z "
+        },
+        {
+          "type": "coptic",
+          "value": "ja "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz.x zz "
+        },
+        {
+          "type": "coptic",
+          "value": "i ` "
+        },
+        {
+          "type": "hazzat",
+          "value": "x "
+        },
+        {
+          "type": "coptic",
+          "value": "mpe "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz.v x -bg "
+        },
+        {
+          "type": "coptic",
+          "value": "n "
+        },
+        {
+          "type": "hazzat",
+          "value": ". "
+        },
+        {
+          "type": "coptic",
+          "value": "ge "
+        },
+        {
+          "type": "hazzat",
+          "value": "cv z "
+        },
+        {
+          "type": "coptic",
+          "value": "no "
+        },
+        {
+          "type": "hazzat",
+          "value": "c.zz cdd "
+        },
+        {
+          "type": "coptic",
+          "value": "c. "
+        }
+      ],
+      "s": 340689,
+      "e": 379664,
+      "sourceIndex": 14,
+      "mixed": "qazz `zpouzjazz.x zzi `xmpezz.v x -bg n. gecv znoc.zz cdd c.",
+      "coptic": "qa `poujai `mpengenoc."
+    },
+    {
+      "i": 15,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "Afswlem `erof `nje pefIwt `n`aga;oc "
+        }
+      ],
+      "s": 379664,
+      "e": 390000,
+      "sourceIndex": 15,
+      "mixed": "Azfswzlezm `ezrozf `znjez pezfIwzt `zn`azgaz;ozzc.",
+      "coptic": "Afswlem `erof `nje pefIwt `n`aga;oc"
+    },
+    {
+      "i": 16,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "m`vnau `nte han`arou hi "
+        }
+      ],
+      "s": 390000,
+      "e": 397000,
+      "sourceIndex": 16,
+      "mixed": "`zm`zvnazu `nte hazn`azrouzz.",
+      "coptic": "m`vnau `nte han`arou"
+    },
+    {
+      "i": 17,
+      "segments": [
+        {
+          "type": "coptic",
+          "value": "hi "
+        },
+        {
+          "type": "hazzat",
+          "value": "z "
+        },
+        {
+          "type": "coptic",
+          "value": "je "
+        },
+        {
+          "type": "hazzat",
+          "value": "x "
+        },
+        {
+          "type": "coptic",
+          "value": "n ] "
+        },
+        {
+          "type": "hazzat",
+          "value": "x "
+        },
+        {
+          "type": "coptic",
+          "value": "go "
+        },
+        {
+          "type": "hazzat",
+          "value": "zz.v x -bg "
+        },
+        {
+          "type": "coptic",
+          "value": "l "
+        },
+        {
+          "type": "hazzat",
+          "value": ". "
+        },
+        {
+          "type": "coptic",
+          "value": "go "
+        },
+        {
+          "type": "hazzat",
+          "value": "zzw zzw zzw x "
+        },
+        {
+          "type": "coptic",
+          "value": ";a "
+        },
+        {
+          "type": "hazzat",
+          "value": "c.zz cdd "
+        },
+        {
+          "type": "coptic",
+          "value": ". "
+        }
+      ],
+      "s": 397000,
+      "e": 700000,
+      "sourceIndex": 17,
+      "mixed": "hiz hizjex n ]x gozz.v x -bg l. gozzw zzw zzw x ;ac.zz cdd .",
+      "coptic": "hi hijen ]golgo;a."
+    }
+  ]
+}

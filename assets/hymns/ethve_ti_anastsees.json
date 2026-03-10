@@ -1,30 +1,276 @@
 {
-  "title": "Ethve Ti Anastsees",
-  "id": "Ethve Ti Anastsees",
-  "author": "Ibrahim Ayad",
-  "audioAsset": "assets/audio/ethve_ti_anastsees.wav",
-  "pdfAsset": "assets/pdfs/ethve_ti_anastsees.pdf",
-  "lines":[
-    { "image": "assets/lines/ethve_ti_anastsees/line (1).png", "startMs": 22000, "endMs": 43500 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (2).png", "startMs": 43500, "endMs": 61500 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (3).png", "startMs": 61500, "endMs": 78000 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (4).png", "startMs": 78000, "endMs": 87000 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (5).png", "startMs": 87000, "endMs": 116500 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (6).png", "startMs": 116500, "endMs": 138700 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (7).png", "startMs": 138700, "endMs": 159400 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (8).png", "startMs": 159400, "endMs": 180400 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (9).png", "startMs": 180400, "endMs": 198600 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (10).png", "startMs": 198600, "endMs": 205400 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (11).png", "startMs": 205400, "endMs": 213700 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (12).png", "startMs": 213700, "endMs": 237300 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (13).png", "startMs": 237300, "endMs": 264100 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (14).png", "startMs": 264100, "endMs": 285900 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (15).png", "startMs": 285900, "endMs": 312900 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (16).png", "startMs": 312900, "endMs": 336800 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (17).png", "startMs": 336800, "endMs": 379800 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (18).png", "startMs": 379800, "endMs": 403300 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (19).png", "startMs": 403300, "endMs": 431000 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (20).png", "startMs": 431000, "endMs": 448500 },
-    { "image": "assets/lines/ethve_ti_anastsees/line (21).png", "startMs": 448500, "endMs": 467200 }
+  "id": "ethve_tianastasees",
+  "title": "Ethve Tianastasees",
+  "fontFamily": "HazzatFont",
+  "pdfAsset": "assets/pdfs/Passion_Week_Hazzat_Booklet.pdf",
+  "initialPdfPage": 49,
+  "audio": "assets/audio/ethve_ti_anastsees.wav",
+  "lines": [
+    {
+      "i": 1,
+      "segments": [
+        { "type": "coptic", "value": "E;be " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "] " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "`a " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "na " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "cta " },
+        { "type": "hazzat", "value": "cd.zzw x.xs " },
+        { "type": "coptic", "value": "ci " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "c " },
+        { "type": "hazzat", "value": ". " }
+      ],
+      "s": 0,
+      "e": 43501,
+      "sourceIndex": 1,
+      "mixed": "E;bezz ]zz`aznazzctacd.zzw x.xs cizzc.",
+      "coptic": "E;be ]`anactacic"
+    },
+    {
+      "i": 2,
+      "segments": [
+        { "type": "coptic", "value": "` " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "nte " },
+        { "type": "hazzat", "value": "x " },
+        { "type": "coptic", "value": "ni " },
+        { "type": "hazzat", "value": "x " },
+        { "type": "coptic", "value": "re " },
+        { "type": "hazzat", "value": "cd.xx " },
+        { "type": "coptic", "value": "fmw " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "ou " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "t " },
+        { "type": "hazzat", "value": ". " }
+      ],
+      "s": 43501,
+      "e": 56901,
+      "sourceIndex": 2,
+      "mixed": "`zntex nix recd.xx fmwzouzzt.",
+      "coptic": "`nte nirefmwout"
+    },
+    {
+      "i": 3,
+      "segments": [
+        { "type": "coptic", "value": "ny " },
+        { "type": "coptic", "value": "`e " },
+        { "type": "coptic", "value": "ta " },
+        { "type": "coptic", "value": "ue " },
+        { "type": "coptic", "value": "nko " },
+        { "type": "hazzat", "value": "zz.zx cd " },
+        { "type": "coptic", "value": "t a " },
+        { "type": "coptic", "value": "ue " },
+        { "type": "coptic", "value": "mto " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "n ` " },
+        { "type": "hazzat", "value": "zzw A zzr . " },
+        { "type": "coptic", "value": "mmw " },
+        { "type": "coptic", "value": "ou " },
+        { "type": "hazzat", "value": "zz. " }
+      ],
+      "s": 56901,
+      "e": 78901,
+      "sourceIndex": 3,
+      "mixed": "nyz`eztax uex nkozz.zx cd t azuezmtozn `zzw ( A zzr .)3 mmwzouzz.",
+      "coptic": "ny`etauenkot auemton `mmwou"
+    },
+    {
+      "i": 4,
+      "segments": [
+        { "type": "coptic", "value": "qe " },
+        { "type": "coptic", "value": "n ` " },
+        { "type": "coptic", "value": "vna " },
+        { "type": "coptic", "value": "h] " },
+        { "type": "coptic", "value": "` " },
+        { "type": "coptic", "value": "mPi " },
+        { "type": "coptic", "value": ",ri " },
+        { "type": "coptic", "value": "ctou " },
+        { "type": "hazzat", "value": "zz " }
+      ],
+      "s": 78901,
+      "e": 88151,
+      "sourceIndex": 4,
+      "mixed": "qezn `zvnazzh]x `zmPiz `x ,rix ctouzz",
+      "coptic": "qen `vnah] `m Pi ,ri ctou"
+    },
+    {
+      "i": 5,
+      "segments": [
+        { "type": "hazzat", "value": "xs vf.zz-vf.zz (x x zz)2 zzw zzw zz. " }
+      ],
+      "s": 88151,
+      "e": 122751,
+      "sourceIndex": 5,
+      "mixed": "xs vf.zz-vf.zz (x x zz)2 zzw zzw zz.",
+      "coptic": ""
+    },
+    {
+      "i": 6,
+      "segments": [
+        { "type": "hazzat", "value": "zx cd cd xx zzw cd cd cd.(xs x.x zx.)4- " }
+      ],
+      "s": 122751,
+      "e": 198751,
+      "sourceIndex": 6,
+      "mixed": "zx cd cd xx zzw cd cd cd.(xs x.x zx.)4-",
+      "coptic": "7) ed x x.x x z c.x e q x zx.cd.x zzrff c.\nc."
+    },
+    {
+      "i": 7,
+      "segments": [
+        { "type": "coptic", "value": "`P[oic ma`mton `nnou'u,y tyrou " },
+        { "type": "hazzat", "value": "cd " },
+        { "type": "coptic", "value": ". " }
+      ],
+      "s": 198751,
+      "e": 205401,
+      "sourceIndex": 7,
+      "mixed": "`P[oic ma`mton `nnou'u,y tyroucd.",
+      "coptic": "P[oic ma`mton `nnou'u,y tyrou."
+    },
+    {
+      "i": 8,
+      "segments": [
+        { "type": "coptic", "value": "Pauloc `vbw " },
+        { "type": "hazzat", "value": "x " },
+        { "type": "coptic", "value": "k `mpen[oic I=y=c P " },
+        { "type": "coptic", "value": ",rictou " },
+        { "type": "hazzat", "value": "cd " },
+        { "type": "coptic", "value": "c. " }
+      ],
+      "s": 205401,
+      "e": 213951,
+      "sourceIndex": 8,
+      "mixed": "Pauloc `vbwx k `mpen[oic I=y=c Pxrictoucd c.",
+      "coptic": "Pauloc vbwk mpen[oic I=y=c P=,=c"
+    },
+    {
+      "i": 9,
+      "segments": [
+        { "type": "coptic", "value": "pi`apoctoloc " },
+        { "type": "coptic", "value": "et;a " },
+        { "type": "hazzat", "value": "zzz.zzw " }
+      ],
+      "s": 213951,
+      "e": 227551,
+      "sourceIndex": 9,
+      "mixed": "piz`ax pox ctox lozzc ezzt;azzz.zzw cc.",
+      "coptic": "pi`apoctoloc et;a"
+    },
+    {
+      "i": 10,
+      "segments": [
+        { "type": "hazzat", "value": "v " },
+        { "type": "coptic", "value": "he " },
+        { "type": "hazzat", "value": "x x.x x z c.x e q x zx.cd.x zzrff. " },
+        { "type": "coptic", "value": "m. " }
+      ],
+      "s": 227551,
+      "e": 264201,
+      "sourceIndex": 10,
+      "mixed": "v hex x x.x x z c.x e q x zx.cd.x zzrffm.",
+      "coptic": "hem"
+    },
+    {
+      "i": 11,
+      "segments": [
+        { "type": "hazzat", "value": "+ " },
+        { "type": "coptic", "value": "vy " },
+        { "type": "hazzat", "value": "zz.cd.zzw x. " },
+        { "type": "coptic", "value": "eta " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": "u . " }
+      ],
+      "s": 264201,
+      "e": 282301,
+      "sourceIndex": 11,
+      "mixed": "+ vyzz.cd.zzw x.exx tazzu.",
+      "coptic": "vy eta u."
+    },
+    {
+      "i": 12,
+      "segments": [
+        { "type": "coptic", "value": ";a " },
+        { "type": "hazzat", "value": "zvf w " },
+        { "type": "coptic", "value": "sf " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "e " },
+        { "type": "hazzat", "value": "z w z xx. " },
+        { "type": "coptic", "value": "pi " },
+        { "type": "hazzat", "value": "c z xx. " },
+        { "type": "coptic", "value": "hi " },
+        { "type": "hazzat", "value": "c x x w zx.xx " },
+        { "type": "coptic", "value": "se " },
+        { "type": "hazzat", "value": "zzz. " }
+    
+      ],
+      "s": 282301,  
+      "e": 317651,
+      "sourceIndex": 12,
+      "mixed": ";azvf w sfz `ez w z xx.pic z xx.hic x x w zx.xx sezzz.",
+      "coptic": ";asf `epihise"
+    },
+
+
+    {
+      "i": 13,
+      "segments": [
+        { "type": "hazzat", "value": "+cd cd -vvf z cd.c w zz.xsaz " },
+        { "type": "coptic", "value": "nnou " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "fi " },
+        { "type": "hazzat", "value": "x " },
+        { "type": "coptic", "value": "` " },
+        { "type": "hazzat", "value": "z " },
+        { "type": "coptic", "value": "nte " },
+        { "type": "hazzat", "value": "z `x " },
+        { "type": "coptic", "value": "V] " },
+        { "type": "hazzat", "value": "zz " },
+        { "type": "coptic", "value": ". " }
+      ],
+      "s": 317651,
+      "e": 356000,
+      "sourceIndex": 13,
+      "mixed": "+cd cd -vvf z cd.c w zz.xsaznnouzfix `zntez `x Vnoux ]zz.",
+      "coptic": "nnoufi `nte V]."
+    },
+    {
+      "i": 14,
+      "segments": [
+        { "type": "hazzat", "value": "xs vf.zz-vf.zz (x x zz)2 zzw zzw zz. " }
+      ],
+      "s": 356000,
+      "e": 391701,
+      "sourceIndex": 14,
+      "mixed": "xs vf.zz-vf.zz (x x zz)2 zzw zzw zz.",
+      "coptic": ""
+    },
+    {
+      "i": 15,
+      "segments": [
+        { "type": "hazzat", "value": "zx cd cd xx zzw cd cd cd.(xs x.x zx.)4- " }
+      ],
+      "s": 391701,
+      "e": 437901,
+      "sourceIndex": 15,
+      "mixed": "zx cd cd xx zzw cd cd cd.(xs x.x zx.)4-",
+      "coptic": ""
+    },
+    {
+      "i": 16,
+      "segments": [
+        { "type": "hazzat", "value": "ed x x.x x z c.x e q x zx.cd.x zzrff " }
+      ],
+      "s": 437901,
+      "e": 467000,
+      "sourceIndex": 16,
+      "mixed": "ed x x.x x z c.x e q x zx.cd.x zzrff",
+      "coptic": ""
+    }
   ]
 }

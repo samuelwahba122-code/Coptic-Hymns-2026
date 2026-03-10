@@ -1,0 +1,64 @@
+{
+  "groups": [
+    {
+      "id": "epiphany",
+      "title": "Epiphany",
+      "hymns": [
+        {
+          "id": "epiphany",
+          "title": "Oran Enshosho",
+          "author": "Ashraf Tadros",
+          "jsonAsset": "assets/hymns/oran_enshosho.json"
+        }
+      ]
+    },
+    {
+      "id": "great_Lent",
+      "title": "Great Lent",
+      "hymns": [
+        {
+          "id": "",
+          "title": "Keryeleyson",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/keryeleyson.json"
+        },
+        {
+          "id": "",
+          "title": "Enthote Ti Shori",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/enthote_ti.json"
+        },
+        {
+          "id": "",
+          "title": "Shari Efnoti",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/shari_efnoti.json"
+        }
+      ]
+    },
+    {
+      "id": "holy_week",
+      "title": "Holy Week",
+      "hymns": [
+        {
+          "id": "",
+          "title": "Ethve Ti Anastsees",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/ethve_ti_anastsees.json"
+        },
+        {
+          "id": "",
+          "title": "Agios El-7azayni",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/agios_el7azayni.json"
+        },
+        {
+          "id": "",
+          "title": "Omonogenis",
+          "author": "Ibrahim Ayad",
+          "jsonAsset": "assets/hymns/omonogenis.json"
+        }
+      ]
+    }
+  ]
+}

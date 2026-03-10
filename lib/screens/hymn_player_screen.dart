@@ -38,6 +38,9 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
 
   bool _immersive = false;
   bool _audioPlaying = false;
+  bool _followAudio = true;
+  ViewMode _viewMode = ViewMode.single;
+  HymnPage _page = HymnPage.hymn;
 
   HymnData? _data;
   String? _error;
@@ -46,14 +49,7 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
 
   int? _lastPosMs;
 
-  // Settings
-  bool _followAudio = true;
-  ViewMode _viewMode = ViewMode.single;
 
-  // which page is visible (Hymn / Settings)
-  HymnPage _page = HymnPage.hymn;
-
-  // List mode: exact scroll-to-selected
   final Map<int, GlobalKey> _rowKeys = {};
 
   StreamSubscription<bool>? _playingSub;
@@ -71,7 +67,7 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
     _positionSub?.cancel();
     _scrollController.dispose();
 
-    // restore bars when leaving screen
+
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
   }
@@ -96,12 +92,14 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
       final map = jsonDecode(raw) as Map<String, dynamic>;
       final data = HymnData.fromJson(map);
 
-      await _shared.loadAssetIfNeeded(data.audioAsset);
+      if ((data.audio ?? '').trim().isNotEmpty) {
+        await _shared.loadAssetIfNeeded(data.audio!);
+      }
 
       final resume = widget.resumePositionMs;
-        if (resume != null && resume > 0) {
-          await _shared.player.seek(Duration(milliseconds: resume));
-        }
+      if (resume != null && resume > 0) {
+        await _shared.player.seek(Duration(milliseconds: resume));
+      }
 
       _playingSub?.cancel();
       _playingSub = _shared.player.playingStream.listen((playing) {
@@ -113,39 +111,35 @@ class _HymnPlayerScreenState extends State<HymnPlayerScreen> {
         }
       });
 
-_positionSub?.cancel();
-_lastPosMs = null;
+      _positionSub?.cancel();
+      _lastPosMs = null;
 
-_positionSub = _shared.player.positionStream.listen((pos) async {
-  final d = data; // the loaded hymn data inside _load()
-  final ms = pos.inMilliseconds;
+      _positionSub = _shared.player.positionStream.listen((pos) async {
+        final ms = pos.inMilliseconds;
 
-  // 1) listening time (optional but useful)
-  final prev = _lastPosMs;
-  if (prev != null) {
-    final delta = ms - prev;
-    if (delta > 0 && delta < 5000) {
-      await StatsService.instance.addListeningMs(delta);
-    }
-  }
-  _lastPosMs = ms;
+        final prev = _lastPosMs;
+        if (prev != null) {
+          final delta = ms - prev;
+          if (delta > 0 && delta < 5000) {
+            await StatsService.instance.addListeningMs(delta);
+          }
+        }
+        _lastPosMs = ms;
 
-  // 2) progress + XP (always)
-  await ProgressService.instance.updateFromPosition(
-    hymnId: d.id,
-    positionMs: ms,
-    lines: d.lines,
-  );
+        await ProgressService.instance.updateFromPosition(
+          hymnId: data.id,
+          positionMs: ms,
+          lines: data.lines,
+        );
 
-  // 3) your existing follow/highlight behavior
-  if (!_followAudio) return;
+        if (!_followAudio) return;
 
-  final idx = _findActiveLine(d.lines, ms);
-  if (idx != _activeIndex && mounted) {
-    setState(() => _activeIndex = idx);
-    await _ensureLineVisible(idx);
-  }
-});
+        final idx = _findActiveLine(data.lines, ms);
+        if (idx != _activeIndex && mounted) {
+          setState(() => _activeIndex = idx);
+          await _ensureLineVisible(idx);
+        }
+      });
 
       if (mounted) setState(() => _data = data);
     } catch (e) {
@@ -158,9 +152,7 @@ _positionSub = _shared.player.positionStream.listen((pos) async {
 
     for (int i = 0; i < lines.length; i++) {
       final start = lines[i].startMs;
-
-      final end = lines[i].endMs ??
-          ((i + 1 < lines.length) ? lines[i + 1].startMs : 1 << 30);
+      final end = lines[i].endMs;
 
       if (posMs >= start && posMs < end) return i;
     }
@@ -215,54 +207,28 @@ _positionSub = _shared.player.positionStream.listen((pos) async {
     );
   }
 
-Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
-  final segs = line.segments;
-  if (segs.isEmpty) return const SizedBox.shrink();
+  Widget _buildLineText(HymnData data, HymnLine line, {required bool active}) {
+    final segs = line.segments;
+    if (segs.isEmpty) return const SizedBox.shrink();
 
-  // ignore: unused_local_variable
-  final screenWidth = MediaQuery.of(context).size.width;
-  final screen = MediaQuery.of(context).size;
+    final screen = MediaQuery.of(context).size;
+    final double baseSize = (screen.height * 0.05).clamp(28.0, 60.0);
 
-// Scale based on both width and height
-final double baseSize = (screen.height * 0.05)
-    .clamp(28.0, 60.0);
-  const Color francoColor = Color(0xFFD4AF37);
-  // ignore: unused_local_variable
-  const Color hazzatColor = Color(0xFFFFFFFF);
-
-  TextStyle styleFor(String type) {
-      const francoColor = Color(0xFFD4AF37); // gold
-      const copticColor = Color.fromARGB(255, 0, 0, 0); // soft white
-      const hazzatColor = Color.fromARGB(255, 0, 0, 0); // strong white
-    final isFranco = type == 'franco';
-
-    return TextStyle(
-      fontFamily: isFranco ? 'Roboto' : data.fontFamily,
-      fontSize: baseSize,
-      height: 1.7,
-      fontWeight: FontWeight.w700,
-      color: isFranco ? francoColor : const Color.fromARGB(255, 0, 0, 0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+      child: Hazzat(
+        child: TextLayer(
+          segments: segs,
+          hazzatFontFamily: 'HazzatFont',
+          copticFontFamily: 'CopticFont',
+          francoFontFamily: 'Roboto',
+          isActive: active,
+          fontSize: baseSize,
+        ),
+      ),
     );
   }
 
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
-    child: Hazzat(
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          children: [
-            for (final seg in segs)
-              TextSpan(
-                text: "${seg.value} ",
-                style: styleFor(seg.type),
-              ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
   Widget _buildSingleMode(HymnData data) {
     final line = data.lines[_activeIndex];
     final hasImage = (line.image ?? '').trim().isNotEmpty;
@@ -272,7 +238,7 @@ final double baseSize = (screen.height * 0.05)
         AudioControls(
           player: _shared.player,
           trailing: IconButton(
-            tooltip: "Play from current line",
+            tooltip: 'Play from current line',
             icon: const Icon(Icons.play_circle_fill),
             onPressed: _playFromCurrentLine,
           ),
@@ -301,14 +267,15 @@ final double baseSize = (screen.height * 0.05)
           child: Row(
             children: [
               ElevatedButton.icon(
-                onPressed: _activeIndex > 0 ? () => _goTo(_activeIndex - 1) : null,
+                onPressed:
+                    _activeIndex > 0 ? () => _goTo(_activeIndex - 1) : null,
                 icon: const Icon(Icons.chevron_left),
-                label: const Text("Prev"),
+                label: const Text('Prev'),
               ),
               const SizedBox(width: 10),
               Expanded(
                 child: Text(
-                  "Line ${_activeIndex + 1} / ${data.lines.length}",
+                  'Line ${_activeIndex + 1} / ${data.lines.length}',
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -318,7 +285,7 @@ final double baseSize = (screen.height * 0.05)
                     ? () => _goTo(_activeIndex + 1)
                     : null,
                 icon: const Icon(Icons.chevron_right),
-                label: const Text("Next"),
+                label: const Text('Next'),
               ),
             ],
           ),
@@ -333,7 +300,7 @@ final double baseSize = (screen.height * 0.05)
         AudioControls(
           player: _shared.player,
           trailing: IconButton(
-            tooltip: "Play from current line",
+            tooltip: 'Play from current line',
             icon: const Icon(Icons.play_circle_fill),
             onPressed: _playFromCurrentLine,
           ),
@@ -346,13 +313,11 @@ final double baseSize = (screen.height * 0.05)
             itemCount: data.lines.length,
             itemBuilder: (context, i) {
               final line = data.lines[i];
-              final active = (i == _activeIndex);
-
+              final active = i == _activeIndex;
               final key = _rowKeys.putIfAbsent(i, () => GlobalKey());
 
               final hasImage = (line.image ?? '').trim().isNotEmpty;
-              final hasText = ((line.text ?? '').trim().isNotEmpty) ||
-                  ((line.franco ?? '').trim().isNotEmpty);
+              final hasText = line.segments.isNotEmpty;
 
               return Container(
                 key: key,
@@ -364,12 +329,18 @@ final double baseSize = (screen.height * 0.05)
                     decoration: BoxDecoration(
                       color: active
                           ? const Color(0xFFC9A24A).withOpacity(0.14)
-                          : Theme.of(context).colorScheme.surface.withOpacity(0.10),
+                          : Theme.of(context)
+                              .colorScheme
+                              .surface
+                              .withOpacity(0.10),
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(
                         color: active
                             ? const Color(0xFFC9A24A).withOpacity(0.55)
-                            : Theme.of(context).colorScheme.onSurface.withOpacity(0.12),
+                            : Theme.of(context)
+                                .colorScheme
+                                .onSurface
+                                .withOpacity(0.12),
                       ),
                     ),
                     child: Row(
@@ -385,14 +356,20 @@ final double baseSize = (screen.height * 0.05)
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(10),
                             border: Border.all(
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.14),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.14),
                             ),
                           ),
                           child: Text(
-                            "${i + 1}",
+                            '${i + 1}',
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.9),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withOpacity(0.9),
                             ),
                           ),
                         ),
@@ -401,18 +378,25 @@ final double baseSize = (screen.height * 0.05)
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              if (hasText) _buildLineText(data, line, active: active),
+                              if (hasText)
+                                _buildLineText(data, line, active: active),
                               if (hasText && hasImage) const SizedBox(height: 8),
                               if (hasImage)
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(line.image!, fit: BoxFit.contain),
+                                  child: Image.asset(
+                                    line.image!,
+                                    fit: BoxFit.contain,
+                                  ),
                                 ),
                               if (!hasText && !hasImage)
                                 Text(
-                                  "Line ${i + 1}",
+                                  'Line ${i + 1}',
                                   style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.6),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withOpacity(0.6),
                                   ),
                                 ),
                             ],
@@ -435,19 +419,21 @@ final double baseSize = (screen.height * 0.05)
       padding: const EdgeInsets.all(12),
       children: [
         SwitchListTile(
-          title: const Text("Follow audio"),
-          subtitle: const Text("Automatically switch the active line while audio plays."),
+          title: const Text('Follow audio'),
+          subtitle: const Text(
+            'Automatically switch the active line while audio plays.',
+          ),
           value: _followAudio,
           onChanged: (v) => setState(() => _followAudio = v),
         ),
         const Divider(),
         ListTile(
-          title: const Text("Display mode"),
-          subtitle: const Text("Choose list view or line-by-line view."),
+          title: const Text('Display mode'),
+          subtitle: const Text('Choose list view or line-by-line view.'),
           trailing: SegmentedButton<ViewMode>(
             segments: const [
-              ButtonSegment(value: ViewMode.single, label: Text("Single")),
-              ButtonSegment(value: ViewMode.list, label: Text("List")),
+              ButtonSegment(value: ViewMode.single, label: Text('Single')),
+              ButtonSegment(value: ViewMode.list, label: Text('List')),
             ],
             selected: {_viewMode},
             onSelectionChanged: (s) async {
@@ -489,26 +475,27 @@ final double baseSize = (screen.height * 0.05)
         appBar: _immersive
             ? null
             : AppBar(
-                title: Text(_page == HymnPage.hymn ? data.title : "Settings"),
+                title: Text(_page == HymnPage.hymn ? data.title : 'Settings'),
                 actions: [
-                  IconButton(
-                    tooltip: hasPdf ? "Open PDF" : "No PDF available",
-                    icon: const Icon(Icons.picture_as_pdf),
-                    onPressed: hasPdf
-                        ? () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => PdfHymnScreen(
-                                  title: data.title,
-                                  pdfAssetPath: data.pdfAsset!,
-                                  sharedPlayer: _shared.player,
-                                ),
-                              ),
-                            )
-                        : null,
-                  ),
+IconButton(
+  tooltip: hasPdf ? 'Open PDF' : 'No PDF available',
+  icon: const Icon(Icons.picture_as_pdf),
+  onPressed: hasPdf
+      ? () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => PdfHymnScreen(
+                title: data.title,
+                pdfAssetPath: data.pdfAsset!,
+                initialPage: data.initialPdfPage ?? 1,
+                sharedPlayer: _shared.player,
+              ),
+            ),
+          )
+      : null,
+),
                   PopupMenuButton<HymnPage>(
-                    tooltip: "Menu",
+                    tooltip: 'Menu',
                     initialValue: _page,
                     onSelected: (p) => setState(() => _page = p),
                     itemBuilder: (_) => const [
@@ -517,7 +504,7 @@ final double baseSize = (screen.height * 0.05)
                         child: ListTile(
                           dense: true,
                           leading: Icon(Icons.music_note),
-                          title: Text("Hymn"),
+                          title: Text('Hymn'),
                         ),
                       ),
                       PopupMenuItem(
@@ -525,7 +512,7 @@ final double baseSize = (screen.height * 0.05)
                         child: ListTile(
                           dense: true,
                           leading: Icon(Icons.settings),
-                          title: Text("Settings"),
+                          title: Text('Settings'),
                         ),
                       ),
                     ],
@@ -544,7 +531,9 @@ final double baseSize = (screen.height * 0.05)
           child: IndexedStack(
             index: _page == HymnPage.hymn ? 0 : 1,
             children: [
-              _viewMode == ViewMode.single ? _buildSingleMode(data) : _buildListMode(data),
+              _viewMode == ViewMode.single
+                  ? _buildSingleMode(data)
+                  : _buildListMode(data),
               _buildSettings(),
             ],
           ),
